@@ -2,9 +2,9 @@ import React from 'react';
 
 const ProposalContent = () => (
   <div style={styles.container}>
-    <h1 style={styles.heading1}>Group Name: AcademiaConnect (TBD)</h1>
+    <h1 style={styles.heading1}>Group Name: AcademiaConnect</h1>
     <p style={styles.paragraph}>
-      <strong>Group Members:</strong> Abdul Saif Mohammed Saif Mohammed, Eshanth Kumar Lal Das, Heechul Choi, Paul Maynard (I got your names from Canvas, so please double-check that everything is correct.)
+      <strong>Group Members:</strong> Abdul Saif Mohammed Saif Mohammed, Eshanth Kumar Lal Das, Heechul Choi, Paul Maynard
     </p>
 
     <h2 style={styles.heading2}>1. Problem Statement</h2>
