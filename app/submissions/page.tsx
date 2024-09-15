@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, CSSProperties } from 'react';
 import ProposalContent from './proposalContent';
 import TBD1Content from './tbd1Content';
 import TBD2Content from './tbd2Content';
@@ -45,10 +45,10 @@ const SubmissionPage = () => {
   };
 
   return (
-    <div style={styles.container}>
+    <div style={styles.container as CSSProperties}>
       {/* Hamburger Menu for mobile */}
       {isMobile && (
-        <button style={styles.hamburger} onClick={toggleMenu}>
+        <button style={styles.hamburger as CSSProperties} onClick={toggleMenu}>
           ☰
         </button>
       )}
@@ -58,17 +58,17 @@ const SubmissionPage = () => {
         style={{
           ...styles.sidebar,
           transform: menuOpen || !isMobile ? 'translateX(0)' : 'translateX(-110%)', // Ensure sidebar is fully off-screen on mobile
-        }}
+        } as CSSProperties}
       >
-        <div style={styles.header}>
-          <h3 style={styles.headerTitle}>CS 615 User Interface Design</h3>
-          <p style={styles.headerSubtitle}>Team Project</p>
-          <h4 style={styles.headerSubtitle}>Academia Connect</h4>
+        <div style={styles.header as CSSProperties}>
+          <h3 style={styles.headerTitle as CSSProperties}>CS 615 User Interface Design</h3>
+          <p style={styles.headerSubtitle as CSSProperties}>Team Project</p>
+          <h4 style={styles.headerSubtitle as CSSProperties}>Academia Connect</h4>
         </div>
 
-        <hr style={styles.separator} />
+        <hr style={styles.separator as CSSProperties} />
 
-        <ul style={styles.menuList}>
+        <ul style={styles.menuList as CSSProperties}>
           <li
             onClick={() => {
               setCurrentMenu('proposal');
@@ -108,7 +108,7 @@ const SubmissionPage = () => {
         </ul>
 
         {/* Home Link */}
-        <a href="/" style={styles.homeButton}>
+        <a href="/" style={styles.homeButton as CSSProperties}>
           Home
         </a>
       </div>
@@ -120,7 +120,7 @@ const SubmissionPage = () => {
           width: isMobile ? '100%' : 'calc(100% - 250px)', // Full width on mobile, adjust for sidebar on desktop
           marginLeft: isMobile ? '0' : '250px', // Align content with sidebar on desktop
           marginTop: isMobile ? '60px' : '0', // Add margin on mobile to avoid overlap with hamburger button
-        }}
+        } as CSSProperties}
       >
         {renderContent()}
       </div>
