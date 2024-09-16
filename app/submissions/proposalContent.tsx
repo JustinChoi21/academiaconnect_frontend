@@ -42,6 +42,7 @@ const ProposalContent = () => (
           <li>Input research interests, desired professor traits, and academic goals using natural language (e.g., &quot;I want a professor who works on AI and is collaborative and approachable&quot;) or keywords (e.g., &quot;machine learning, data science&quot;).</li>
           <li>Review recommended professors, available research positions, and programs.</li>
           <li>Filter or refine the recommendations based on additional criteria, such as location, ranking, or program size.</li>
+          <li>Communicate with professors that match their needs.</li>
         </ul>
       </li>
       <li><strong>Professors:</strong>
@@ -49,6 +50,7 @@ const ProposalContent = () => (
           <li>Post detailed recruitment listings specifying the types of students they are looking for (e.g., Master&apos;s or Ph.D., specific research areas, experience, skills).</li>
           <li>Search for students using either natural language or keyword-based inputs (e.g., &quot;Master&apos;s student with experience in machine learning&quot;).</li>
           <li>Browse through student profiles that fit their lab&apos;s research needs.</li>
+          <li>Communicate with students that match their needs.</li>
         </ul>
       </li>
     </ul>
