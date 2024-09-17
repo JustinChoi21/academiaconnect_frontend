@@ -4,7 +4,7 @@ const ProposalContent = () => (
   <div style={styles.container}>
     <h1 style={styles.heading1}>Group Name: AcademiaConnect</h1>
     <p style={styles.paragraph}>
-      <strong>Group Members:</strong> Abdul Saif Mohammed Saif Mohammed, Eshanth Kumar Lal Das, Heechul Choi, Paul Maynard
+      <strong>Group Members:</strong> Abdul Saif Mohammed, Eshanth Kumar Lal Das, Heechul Choi, Paul Maynard
     </p>
 
     <h2 style={styles.heading2}>1. Problem Statement</h2>
