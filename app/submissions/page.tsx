@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect, CSSProperties } from 'react';
 import ProposalContent from './proposalContent';
-import TBD1Content from './tbd1Content';
-import TBD2Content from './tbd2Content';
-import TBD3Content from './tbd3Content';
+import UserAnalysis from './userAnalysis';
+import TaskAnalysis from './taskAnalysis';
+import DomainAnalysis from './domainAnalysis';
 
 const SubmissionPage = () => {
   const [currentMenu, setCurrentMenu] = useState('proposal');
@@ -29,12 +29,12 @@ const SubmissionPage = () => {
     switch (currentMenu) {
       case 'proposal':
         return <ProposalContent />;
-      case 'TBD1':
-        return <TBD1Content />;
-      case 'TBD2':
-        return <TBD2Content />;
-      case 'TBD3':
-        return <TBD3Content />;
+      case 'UserAnalysis':
+        return <UserAnalysis />;
+      case 'TaskAnalysis':
+        return <TaskAnalysis />;
+      case 'DomainAnalysis':
+        return <DomainAnalysis />;
       default:
         return <p>Select a menu item to see its content.</p>;
     }
@@ -80,30 +80,30 @@ const SubmissionPage = () => {
           </li>
           <li
             onClick={() => {
-              setCurrentMenu('TBD1');
+              setCurrentMenu('UserAnalysis');
               setMenuOpen(false);
             }}
-            style={currentMenu === 'TBD1' ? styles.activeMenuItem : styles.menuItem}
+            style={currentMenu === 'UserAnalysis' ? styles.activeMenuItem : styles.menuItem}
           >
-            TBD1
+            User Analysis
           </li>
           <li
             onClick={() => {
-              setCurrentMenu('TBD2');
+              setCurrentMenu('TaskAnalysis');
               setMenuOpen(false);
             }}
-            style={currentMenu === 'TBD2' ? styles.activeMenuItem : styles.menuItem}
+            style={currentMenu === 'TaskAnalysis' ? styles.activeMenuItem : styles.menuItem}
           >
-            TBD2
+            Task Analysis
           </li>
           <li
             onClick={() => {
-              setCurrentMenu('TBD3');
+              setCurrentMenu('DomainAnalysis');
               setMenuOpen(false);
             }}
-            style={currentMenu === 'TBD3' ? styles.activeMenuItem : styles.menuItem}
+            style={currentMenu === 'DomainAnalysis' ? styles.activeMenuItem : styles.menuItem}
           >
-            TBD3
+            Domain Analysis
           </li>
         </ul>
 
