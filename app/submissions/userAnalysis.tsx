@@ -93,15 +93,8 @@ const UserAnalysis = () => (
 
     <br />
     <h2 style={styles.heading2}>3. Conclusions from User Analysis</h2>
-    <ul style={styles.list}>
-      <li>Most users value intuitive and streamlined platforms that reduce the time spent searching for the right collaborators.</li>
-      <li>They want a system that easily connects professors and students, providing simple and efficient ways to communicate and collaborate without unnecessary complications.</li>
-      <li>Some users emphasized the need for setting clear expectations for successful collaborations.</li>
-      <li>There is a desire for a single platform where users can find up-to-date information on research topics, professor profiles, ongoing projects, and similar resources.</li>
-      <li>Both professors and students face challenges in finding the right match due to time constraints, communication barriers, and the lack of a centralized platform for research collaborations.</li>
-      <li>Clear communication of research interests, expectations, and time commitments is crucial for both parties.</li>
-      <li>A platform that facilitates not only matching but also ongoing communication would be highly beneficial.</li>
-    </ul>
+      <p>- Most users value intuitive and streamlined platforms that reduce the time spent searching for the right collaborators. They want a system that easily connects professors and students, providing simple and efficient ways to communicate and collaborate without unnecessary complications.</p>
+      <p>- Some users emphasized the need for setting clear expectations for successful collaborations. They expressed a desire for a single platform where they can find up-to-date information on research topics, professor profiles, ongoing projects, and similar resources.</p>
   </div>
 );
 
