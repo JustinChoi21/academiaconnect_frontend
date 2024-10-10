@@ -5,6 +5,7 @@ import ProposalContent from './proposalContent';
 import UserAnalysis from './userAnalysis';
 import TaskAnalysis from './taskAnalysis';
 import DomainAnalysis from './domainAnalysis';
+import Storyboards from './storyboards';
 
 const SubmissionPage = () => {
   const [currentMenu, setCurrentMenu] = useState('proposal');
@@ -35,6 +36,8 @@ const SubmissionPage = () => {
         return <TaskAnalysis />;
       case 'DomainAnalysis':
         return <DomainAnalysis />;
+      case 'Storyboards':
+        return <Storyboards />;
       default:
         return <p>Select a menu item to see its content.</p>;
     }
