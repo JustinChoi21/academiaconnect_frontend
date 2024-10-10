@@ -1,10 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const StyledLink = styled.a`
-  color: blue;
-  text-decoration: none;
-`;
 
 const Storyboards = () => (
   <div style={styles.container}>
