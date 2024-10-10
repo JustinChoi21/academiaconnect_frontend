@@ -108,6 +108,15 @@ const SubmissionPage = () => {
           >
             Domain Analysis
           </li>
+          <li
+            onClick={() => {
+              setCurrentMenu('Storyboards');
+              setMenuOpen(false);
+            }}
+            style={currentMenu === 'Storyboards' ? styles.activeMenuItem : styles.menuItem}
+          >
+            Storyboards
+          </li>
         </ul>
 
         {/* Home Link */}
