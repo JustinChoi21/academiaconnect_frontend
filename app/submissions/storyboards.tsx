@@ -4,7 +4,7 @@ const Storyboards = () => (
   <div style={styles.container}>
     <h1 style={styles.heading1}>4. Storyboards</h1>
 
-    <h2 style={styles.heading2}>Task #1</h2>
+    <h2 style={styles.heading2}>Task #1 Traditional Keyword Search</h2>
     
     <div style={styles.imageContainer}>
       <img 
@@ -15,9 +15,50 @@ const Storyboards = () => (
     </div>
 
     <p style={styles.paragraph}>
-      This is Task 1 storyboard.
+      <strong>Why this sketch?</strong> This is Task 1 storyboard.
     </p>
 
+    <h2 style={styles.heading2}>Task #2 AI-Powered Chat / Natural Language Communication</h2>
+    
+    <div style={styles.imageContainer}>
+      <img 
+        src="/task_1.jpg" 
+        alt="Task1" 
+        style={styles.image}
+      />
+    </div>
+
+    <p style={styles.paragraph}>
+      <strong>Why this sketch?</strong> This is Task 2 storyboard.
+    </p>
+
+    <h2 style={styles.heading2}>Task #3 Setting Up a Profile</h2>
+    
+    <div style={styles.imageContainer}>
+      <img 
+        src="/task_1.jpg" 
+        alt="Task1" 
+        style={styles.image}
+      />
+    </div>
+
+    <p style={styles.paragraph}>
+      <strong>Why this sketch?</strong> This is Task 3 storyboard.
+    </p>
+
+    <h2 style={styles.heading2}>Task #4 Facilitating Communication Between Matched Professors and Students</h2>
+    
+    <div style={styles.imageContainer}>
+      <img 
+        src="/task_1.jpg" 
+        alt="Task1" 
+        style={styles.image}
+      />
+    </div>
+
+    <p style={styles.paragraph}>
+      <strong>Why this sketch?</strong> This is Task 4 storyboard.
+    </p>
   </div>
 );
 
