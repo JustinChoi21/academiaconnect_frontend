@@ -8,7 +8,7 @@ const Storyboards = () => (
     
     <div style={styles.imageContainer}>
       <img 
-        src="/task1.jpg" 
+        src="/task_1.jpg" 
         alt="Task1" 
         style={styles.image}
       />
