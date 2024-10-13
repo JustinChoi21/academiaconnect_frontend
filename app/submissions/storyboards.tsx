@@ -29,7 +29,7 @@ const Storyboards = () => (
     </div>
 
     <p style={styles.paragraph}>
-      <strong>Why this sketch?</strong> This sketch focuses on the process of interacting with an AI-based system using natural language input. The user journey is depicted from the start of inputting a query through the AI processing it and returning relevant profiles based on the user's specific needs. 
+      <strong>Why this sketch?</strong> This sketch focuses on the process of interacting with an AI-based system using natural language input. The user journey is depicted from the start of inputting a query through the AI processing it and returning relevant profiles based on the user&aposs specific needs. 
     </p>
 
     <h2 style={styles.heading2}>Task #3 Setting Up a Profile</h2>
