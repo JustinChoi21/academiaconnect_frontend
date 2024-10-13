@@ -15,7 +15,7 @@ const Storyboards = () => (
     </div>
 
     <p style={styles.paragraph}>
-      <strong>Why this sketch?</strong> This sketch clearly outlines a scenario where a student, and a professor use a keyword-based search system to find relevant collaborators.
+      <strong>Why this sketch?</strong> This sketch clearly outlines a scenario where a student and a professor use a keyword-based search system to find relevant collaborators.
     </p>
 
     <h2 style={styles.heading2}>Task #2 AI-Powered Chat / Natural Language Communication</h2>
@@ -29,7 +29,7 @@ const Storyboards = () => (
     </div>
 
     <p style={styles.paragraph}>
-      <strong>Why this sketch?</strong> This sketch focuses on the process of interacting with an AI-based system using natural language input. The user journey is depicted from the start of inputting a query through the AI processing it and returning relevant profiles based on the user&aposs specific needs. 
+      <strong>Why this sketch?</strong> This sketch focuses on the process of interacting with an AI-based system using natural language input. The user journey is depicted from the start of inputting a query through the AI processing it and returning relevant profiles based on the specific needs of the user. Additionally, the sketch shows how the system can provide valuable information by comparing the profile of the potential collaboartors.
     </p>
 
     <h2 style={styles.heading2}>Task #3 Setting Up a Profile</h2>
@@ -57,7 +57,7 @@ const Storyboards = () => (
     </div>
 
     <p style={styles.paragraph}>
-      <strong>Why this sketch?</strong> This sketch highlights how the platform enables communication between matched professors and students. The sketch covers:
+      <strong>Why this sketch?</strong> This sketch highlights how the platform enables communication between matched professors and students.
     </p>
   </div>
 );
