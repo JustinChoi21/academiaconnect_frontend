@@ -15,49 +15,49 @@ const Storyboards = () => (
     </div>
 
     <p style={styles.paragraph}>
-      <strong>Why this sketch?</strong> This is Task 1 storyboard.
+      <strong>Why this sketch?</strong> The sketch clearly outlines a scenario where a student, and a professor use a keyword-based search system to find relevant collaborators.
     </p>
 
     <h2 style={styles.heading2}>Task #2 AI-Powered Chat / Natural Language Communication</h2>
     
     <div style={styles.imageContainer}>
       <img 
-        src="/task_1.jpg" 
+        src="/task_2.jpg" 
         alt="Task1" 
         style={styles.image}
       />
     </div>
 
     <p style={styles.paragraph}>
-      <strong>Why this sketch?</strong> This is Task 2 storyboard.
+      <strong>Why this sketch?</strong> This sketch focuses on the process of interacting with an AI-based system using natural language input. The user journey is depicted from the start of inputting a query through the AI processing it and returning relevant profiles based on the user's specific needs. 
     </p>
 
     <h2 style={styles.heading2}>Task #3 Setting Up a Profile</h2>
     
     <div style={styles.imageContainer}>
       <img 
-        src="/task_1.jpg" 
+        src="/task_3.jpg" 
         alt="Task1" 
         style={styles.image}
       />
     </div>
 
     <p style={styles.paragraph}>
-      <strong>Why this sketch?</strong> This is Task 3 storyboard.
+      <strong>Why this sketch?</strong> The sketch for this task illustrates the step-by-step process of creating a profile for both students and professors.
     </p>
 
     <h2 style={styles.heading2}>Task #4 Facilitating Communication Between Matched Professors and Students</h2>
     
     <div style={styles.imageContainer}>
       <img 
-        src="/task_1.jpg" 
+        src="/task_4.jpg" 
         alt="Task1" 
         style={styles.image}
       />
     </div>
 
     <p style={styles.paragraph}>
-      <strong>Why this sketch?</strong> This is Task 4 storyboard.
+      <strong>Why this sketch?</strong> This sketch highlights how the platform enables communication between matched professors and students. The sketch covers:
     </p>
   </div>
 );
