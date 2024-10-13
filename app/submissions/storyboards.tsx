@@ -15,7 +15,7 @@ const Storyboards = () => (
     </div>
 
     <p style={styles.paragraph}>
-      <strong>Why this sketch?</strong> The sketch clearly outlines a scenario where a student, and a professor use a keyword-based search system to find relevant collaborators.
+      <strong>Why this sketch?</strong> This sketch clearly outlines a scenario where a student, and a professor use a keyword-based search system to find relevant collaborators.
     </p>
 
     <h2 style={styles.heading2}>Task #2 AI-Powered Chat / Natural Language Communication</h2>
