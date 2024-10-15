@@ -39,7 +39,7 @@ const UserAnalysis = () => (
     <br />
     <h2 style={styles.heading2}>2. Interview Results</h2>
 
-    <h3 style={styles.heading3}>(1) Professor, Department of Chemistry, Brandeis University</h3>
+    <h3 style={styles.heading3}>(1) Professor, Brandeis University</h3>
     <p style={styles.paragraph}><strong>Q: How do you typically find students to work in your lab or collaborate on research projects?</strong></p>
     <p style={styles.paragraph}>A: I usually find students through a combination of direct applications, recommendations from colleagues, and my involvement in various academic events, such as conferences and seminars. Graduate students often approach me after learning about my research during class or through my publications. Additionally, I sometimes receive inquiries from students who come across my lab&apos;s work online.</p>
 
