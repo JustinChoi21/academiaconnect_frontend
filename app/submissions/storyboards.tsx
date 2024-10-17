@@ -60,6 +60,8 @@ const Storyboards = () => (
       <strong>Why this sketch?</strong> This sketch highlights how the platform enables communication between matched professors and students.
     </p>
 
+    <br></br>
+
     <h2 style={styles.heading2}>All sketches</h2>
     
     <div style={styles.imageContainer}>
