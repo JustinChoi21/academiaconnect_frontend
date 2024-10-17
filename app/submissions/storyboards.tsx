@@ -2,7 +2,7 @@ import React from 'react';
 
 const Storyboards = () => (
   <div style={styles.container}>
-    <h1 style={styles.heading1}>4. Storyboards</h1>
+    <h1 style={styles.heading1}>4. Storyboards & Sketches</h1>
 
     <h2 style={styles.heading2}>Task #1 Traditional Keyword Search</h2>
     
@@ -23,7 +23,7 @@ const Storyboards = () => (
     <div style={styles.imageContainer}>
       <img 
         src="/task_2.jpg" 
-        alt="Task1" 
+        alt="Task2" 
         style={styles.image}
       />
     </div>
@@ -37,7 +37,7 @@ const Storyboards = () => (
     <div style={styles.imageContainer}>
       <img 
         src="/task_3.jpg" 
-        alt="Task1" 
+        alt="Task3" 
         style={styles.image}
       />
     </div>
@@ -51,7 +51,7 @@ const Storyboards = () => (
     <div style={styles.imageContainer}>
       <img 
         src="/task_4.jpg" 
-        alt="Task1" 
+        alt="Task4" 
         style={styles.image}
       />
     </div>
@@ -59,6 +59,47 @@ const Storyboards = () => (
     <p style={styles.paragraph}>
       <strong>Why this sketch?</strong> This sketch highlights how the platform enables communication between matched professors and students.
     </p>
+
+    <h2 style={styles.heading2}>All sketches</h2>
+    
+    <div style={styles.imageContainer}>
+      <img 
+        src="/task_1.jpg" 
+        alt="Task1" 
+        style={styles.image}
+      />
+      <img 
+        src="/task_1_2.jpg" 
+        alt="Task1-2" 
+        style={styles.image}
+      />
+      <img 
+        src="/task_2.jpg" 
+        alt="Task1" 
+        style={styles.image}
+      />
+      <img 
+        src="/task_2_1.jpg" 
+        alt="Task1" 
+        style={styles.image}
+      />
+      <img 
+        src="/task_3.jpg" 
+        alt="Task1" 
+        style={styles.image}
+      />
+      <img 
+        src="/task_4.jpg" 
+        alt="Task1" 
+        style={styles.image}
+      />
+      <img 
+        src="/task_4_1.jpg" 
+        alt="Task1" 
+        style={styles.image}
+      />
+    </div>
+    
   </div>
 );
 
