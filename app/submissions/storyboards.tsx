@@ -4,6 +4,7 @@ const Storyboards = () => (
   <div style={styles.container}>
     <h1 style={styles.heading1}>4. Storyboards & Sketches</h1>
 
+    <h1 style={styles.heading1}>(1) Final sketches per task</h1>
     <h2 style={styles.heading2}>Task #1 Traditional Keyword Search</h2>
     
     <div style={styles.imageContainer}>
@@ -62,7 +63,7 @@ const Storyboards = () => (
 
     <br></br>
 
-    <h2 style={styles.heading2}>All sketches</h2>
+    <h1 style={styles.heading1}>(2) All sketches</h1>
     
     <div style={styles.imageContainer}>
       <img 
