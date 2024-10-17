@@ -79,7 +79,7 @@ const Storyboards = () => (
         style={styles.image}
       />
       <img 
-        src="/task_2_1.jpg" 
+        src="/task_2_2.jpg" 
         alt="Task1" 
         style={styles.image}
       />
@@ -94,7 +94,7 @@ const Storyboards = () => (
         style={styles.image}
       />
       <img 
-        src="/task_4_1.jpg" 
+        src="/task_4_2.jpg" 
         alt="Task1" 
         style={styles.image}
       />
