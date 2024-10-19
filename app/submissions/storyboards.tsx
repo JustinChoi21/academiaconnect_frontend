@@ -23,7 +23,7 @@ const Storyboards = () => (
     
     <div style={styles.imageContainer}>
       <img 
-        src="/task_2.jpg" 
+        src="/task_2_1.jpg" 
         alt="Task2" 
         style={styles.image}
       />
@@ -77,7 +77,7 @@ const Storyboards = () => (
         style={styles.image}
       />
       <img 
-        src="/task_2.jpg" 
+        src="/task_2_1.jpg" 
         alt="Task1" 
         style={styles.image}
       />
