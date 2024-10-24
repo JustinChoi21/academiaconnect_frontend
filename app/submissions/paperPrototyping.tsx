@@ -38,6 +38,8 @@ const PaperPrototyping = () => (
       (3) Both can communicate through an integrated messaging tool to facilitate collaboration.
     </p>
 
+    <br></br>
+
     <h1 style={styles.heading1}>(3) Scenario Tasks</h1>
     <ul style={styles.list}>
       <li>
@@ -53,6 +55,59 @@ const PaperPrototyping = () => (
         Find a professor whose research aligns with your interests and send them a message to introduce yourself and ask about collaboration opportunities.
       </li>
     </ul>
+
+    <br></br>
+
+    <h1 style={styles.heading1}>(4) Observation</h1>
+
+    <p style={styles.paragraph}>
+      <b>Task 1: Find a Professor for Collaboration</b> <br />
+      <b>Observations</b>: 
+      (1) Users quickly identified the search bar and entered keywords related to their research interests.
+      (2) Users expected the search results to be displayed in a list format with brief summaries.
+      (3) Users appreciated the ability to filter results by relevance, location, and other criteria.
+      (4) Users were confused by the “Advanced Search” option and expected more guidance on its use.
+      (5) Users were satisfied with the level of detail provided in the professor profiles and found the information relevant.
+    </p>
+    <p style={styles.paragraph}>
+      <b>Task 2: Set Up a Student Profile</b> <br />
+      <b>Observations</b>: 
+      (1) Users navigated to the profile creation page easily and found the form fields intuitive.
+      (2) Users appreciated the option to import academic information from LinkedIn or other sources.
+      (3) Users expected more guidance on how to optimize their profiles for better matching results.
+      (4) Users found the process of adding research interests and skills straightforward and relevant.
+      (5) Users were satisfied with the level of customization available for their profiles.
+    </p>
+    <p style={styles.paragraph}>
+      <b>Task 3: Message a Matched Professor</b> <br />
+      <b>Observations</b>: 
+      (1) Users easily located the messaging feature on the professor’s profile page.
+      (2) Users expected more guidance on how to craft an effective introductory message.
+      (3) Users appreciated the ability to attach files or links to their messages.
+      (4) Users found the messaging interface simple and user-friendly.
+      (5) Users expected more features for tracking and managing their communication history.
+
+    <br></br>
+
+    <h1 style={styles.heading1}>(5) Prototype iteration</h1>
+    <p style={styles.paragraph}>
+      Based on the observations and feedback from users, we plan to make the following changes to our prototype:
+    </p>
+    <ul style={styles.list}>
+      <li>
+        Improve the guidance and instructions provided to users, especially for advanced features like the “Advanced Search” option.
+      </li>
+      <li>
+        Enhance the messaging feature with tips for effective communication and tools for managing conversations.
+      </li>
+      <li>
+        Optimize the profile creation process with more customization options and suggestions for improving matching results.
+      </li>
+      <li>
+        Implement a feedback mechanism for users to report issues or suggest improvements during testing.
+      </li>
+    </ul>
+    
   </div>
 );
 
