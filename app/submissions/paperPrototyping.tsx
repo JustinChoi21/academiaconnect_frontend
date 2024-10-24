@@ -8,16 +8,16 @@ const PaperPrototyping = () => (
     
     <div style={styles.imageContainer}>
       <img 
-        src="/task_1.jpg" 
-        alt="Task1" 
+        src="/prototyping.jpg" 
+        alt="prototyping main_page" 
         style={styles.image}
       />
     </div>
     
     <div style={styles.imageContainer}>
       <img 
-        src="/task_2_1.jpg" 
-        alt="Task2" 
+        src="/prototyping_main_page.jpg" 
+        alt="prototyping_main_page" 
         style={styles.image}
       />
     </div>
