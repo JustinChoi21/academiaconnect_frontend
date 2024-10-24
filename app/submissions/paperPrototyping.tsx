@@ -86,6 +86,7 @@ const PaperPrototyping = () => (
       (3) Users appreciated the ability to attach files or links to their messages.
       (4) Users found the messaging interface simple and user-friendly.
       (5) Users expected more features for tracking and managing their communication history.
+    </p>
 
     <br></br>
 
@@ -107,7 +108,7 @@ const PaperPrototyping = () => (
         Implement a feedback mechanism for users to report issues or suggest improvements during testing.
       </li>
     </ul>
-    
+
   </div>
 );
 
