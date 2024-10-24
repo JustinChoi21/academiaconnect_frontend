@@ -33,11 +33,26 @@ const PaperPrototyping = () => (
     </p>
     <p style={styles.paragraph}>
       <b>Use Case Summary</b>: 
-      (1) Students Can input interests using keywords or natural language (e.g., “AI research in healthcare”) to find suitable professors, programs, or labs.
-(2) Professors: Can create listings for open research positions and search for students whose skills match their projects.
-(3) Both: Can communicate through an integrated messaging tool to facilitate collaboration.
+      (1) Students can input interests using keywords or natural language (e.g., “AI research in healthcare”) to find suitable professors, programs, or labs.
+      (2) Professors can create listings for open research positions and search for students whose skills match their projects.
+      (3) Both can communicate through an integrated messaging tool to facilitate collaboration.
     </p>
-    
+
+    <h1 style={styles.heading1}>(3) Scenario Tasks</h1>
+    <ul style={styles.list}>
+      <li>
+        <b>Task 1: Find a Professor for Collaboration</b> <br />
+        Search for a professor working in the field of AI and healthcare, and explore their research profile.
+      </li>
+      <li>
+        <b>Task 2: Set Up a Student Profile</b> <br />
+        Create a student profile by filling out your academic background, research interests, and skills.
+      </li>
+      <li>
+        <b>Task 3: Message a Matched Professor</b> <br />
+        Find a professor whose research aligns with your interests and send them a message to introduce yourself and ask about collaboration opportunities.
+      </li>
+    </ul>
   </div>
 );
 
@@ -51,18 +66,6 @@ const styles = {
   heading1: {
     fontSize: '24px',
     marginBottom: '10px',
-    color: '#000',
-  },
-  heading2: {
-    fontSize: '20px',
-    marginTop: '20px',
-    marginBottom: '10px',
-    color: '#000',
-  },
-  heading3: {
-    fontSize: '18px',
-    marginTop: '15px',
-    marginBottom: '8px',
     color: '#000',
   },
   paragraph: {
