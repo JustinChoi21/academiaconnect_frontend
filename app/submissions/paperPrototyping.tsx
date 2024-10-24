@@ -8,7 +8,7 @@ const PaperPrototyping = () => (
     
     <div style={styles.imageContainer}>
       <img 
-        src="/prototyping.jpg" 
+        src="/prototyping_main_page.jpg" 
         alt="prototyping main_page" 
         style={styles.image}
       />
@@ -16,8 +16,8 @@ const PaperPrototyping = () => (
     
     <div style={styles.imageContainer}>
       <img 
-        src="/prototyping_main_page.jpg" 
-        alt="prototyping_main_page" 
+        src="/prototyping_advanced_search.jpg" 
+        alt="prototyping_advanced_search" 
         style={styles.image}
       />
     </div>
