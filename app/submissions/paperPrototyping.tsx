@@ -146,15 +146,14 @@ const PaperPrototyping = () => (
 
     <p style={styles.paragraph}>
       <b>Task 1: Set Up a Student Profile</b> <br />
-      <b>Observations:</b><br />
       (1) Testers navigated to the profile creation page easily and found the form fields intuitive.<br />
       (2) Testers were confused by the checkbox for selecting research interests on the profile settings page.<br />
       (3) A tester thought the professor promotion box was redundant and suggested it be placed on the main page instead.<br />
+      (4) A tester suggested separating the profile settings into distinct pages for students and professors.
     </p>
 
     <p style={styles.paragraph}>
       <b>Task 2: Find a Professor for Collaboration</b> <br />
-      <b>Observations:</b><br />
       (1) Testers quickly identified the search bar and entered keywords but were unclear on what type of input was expected.<br />
       (2) Testers found the Advanced Search option confusing and wanted more guidance on how to use it.<br />
       (3) A tester felt that there were too many separate search functions and suggested integrating them into a single interface.<br />
@@ -162,7 +161,6 @@ const PaperPrototyping = () => (
 
     <p style={styles.paragraph}>
       <b>Task 3: Message a Matched Professor</b> <br />
-      <b>Observations:</b><br />
       (1) Testers easily located the messaging feature on the professor profile page.<br />
       (2) A tester suggested the option to attach files to messages.<br />
       (3) Testers found the messaging interface simple and intuitive.<br />
@@ -176,23 +174,27 @@ const PaperPrototyping = () => (
     </p>
     <ul style={styles.list}>
       <li>
-        <b>Improving Research Interest Selection:</b> 
+        <b>1. Improving Research Interest Selection:</b> 
         We updated the checkbox design for selecting research interests to make it clearer. Adding placeholder text and examples provides users with better guidance on input expectations.
       </li>
+      <br />
       <li>
-        <b>Relocating the Professor Promotion Box:</b> 
+        <b>2. Relocating the Professor Promotion Box:</b> 
         We moved the professor promotion box from the profile setup page to the main page to ensure it appears in a more relevant context.
       </li>
+      <br />
       <li>
-        <b>Integrating Search Functions:</b> 
+        <b>3. Integrating Search Functions:</b> 
         To avoid confusion, we merged the standard and advanced search options into a single interface with expandable filters, creating a seamless search experience.
       </li>
+      <br />
       <li>
-        <b>Enhancing Messaging Features:</b> 
+        <b>4. Enhancing Messaging Features:</b> 
         We introduced the option to attach files within messages, improving communication between users.
       </li>
+      <br />
       <li>
-        <b>Providing Advanced Search Guidance:</b> 
+        <b>5. Providing Advanced Search Guidance:</b> 
         We added a tooltip and brief description explaining how to effectively use the search options.
       </li>
     </ul>
