@@ -174,27 +174,27 @@ const PaperPrototyping = () => (
     </p>
     <ul style={styles.list}>
       <li>
-        <b>1. Improving Research Interest Selection:</b> 
+        <b>1. Improving Research Interest Selection:</b><br></br>
         We updated the checkbox design for selecting research interests in profile setting page to make it clearer. Separating the profile settings into distinct pages for students and professors.
       </li>
       <br />
       <li>
-        <b>2. Relocating the Professor Promotion Box:</b> 
+        <b>2. Relocating the Professor Promotion Box:</b><br></br> 
         We moved the professor promotion box from the profile setup page to the main page to ensure it appears in a more relevant context.
       </li>
       <br />
       <li>
-        <b>3. Integrating Search Functions:</b> 
+        <b>3. Integrating Search Functions:</b><br></br>
         To avoid confusion, we merged the search options into a single interface with expandable filters, creating a seamless search experience.
       </li>
       <br />
       <li>
-        <b>4. Enhancing Messaging Features:</b> 
+        <b>4. Enhancing Messaging Features:</b><br></br>
         We introduced the option to attach files within messages, improving communication between users.
       </li>
       <br />
       <li>
-        <b>5. Providing More Guidance:</b> 
+        <b>5. Providing More Guidance:</b><br></br>
         We added a brief description explaining how to effectively use the search bar and provide matching scores for the comparison feature.
       </li>
     </ul>
