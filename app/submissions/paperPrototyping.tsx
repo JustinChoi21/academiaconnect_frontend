@@ -106,6 +106,13 @@ const PaperPrototyping = () => (
     <p style={styles.paragraph}>
       <b>Background Information</b>: Finding the right academic match can be challenging for both <b>students</b> and <b>professors</b>. Students often struggle to manually sift through professor profiles, research papers, and institutional information to find the right opportunities. Professors, in turn, have trouble identifying students whose interests and expertise align with their projects. Our platform allows both parties <b>to streamline the process</b> with personalized search features and built-in messaging tools.
     </p>
+    <div style={styles.imageContainer}>
+      <img 
+        src="/prototyping_breifing.jpg" 
+        alt="prototyping_breifing" 
+        style={styles.image}
+      />
+    </div>
 
     <br></br>
 
@@ -124,6 +131,14 @@ const PaperPrototyping = () => (
         Find a professor whose research aligns with your interests and send them a message to introduce yourself and ask about collaboration opportunities.
       </li>
     </ul>
+
+    <div style={styles.imageContainer}>
+      <img 
+        src="/prototyping_tasks.jpg" 
+        alt="prototyping_tasks" 
+        style={styles.image}
+      />
+    </div>
 
     <br></br>
 
