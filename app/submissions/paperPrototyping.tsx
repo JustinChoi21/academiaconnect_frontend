@@ -175,7 +175,7 @@ const PaperPrototyping = () => (
     <ul style={styles.list}>
       <li>
         <b>1. Improving Research Interest Selection:</b> 
-        We updated the checkbox design for selecting research interests to make it clearer. Adding placeholder text and examples provides users with better guidance on input expectations.
+        We updated the checkbox design for selecting research interests in profile setting page to make it clearer. Separating the profile settings into distinct pages for students and professors.
       </li>
       <br />
       <li>
@@ -185,7 +185,7 @@ const PaperPrototyping = () => (
       <br />
       <li>
         <b>3. Integrating Search Functions:</b> 
-        To avoid confusion, we merged the standard and advanced search options into a single interface with expandable filters, creating a seamless search experience.
+        To avoid confusion, we merged the search options into a single interface with expandable filters, creating a seamless search experience.
       </li>
       <br />
       <li>
@@ -194,25 +194,61 @@ const PaperPrototyping = () => (
       </li>
       <br />
       <li>
-        <b>5. Providing Advanced Search Guidance:</b> 
-        We added a tooltip and brief description explaining how to effectively use the search options.
+        <b>5. Providing More Guidance:</b> 
+        We added a brief description explaining how to effectively use the search bar and provide matching scores for the comparison feature.
       </li>
     </ul>
     <br />
 
     <div style={styles.imageContainer}>
-    <p style={{ textAlign: 'left' }}>Setting Profile for Student</p>
+    <p style={{ textAlign: 'left' }}>Main Page Refinement</p>
+      <img 
+        src="/prototype_refine_main_page.jpg" 
+        alt="prototype_refine_main_page" 
+        style={styles.image}
+      />
+    </div>
+
+    <div style={styles.imageContainer}>
+    <p style={{ textAlign: 'left' }}>Separating Profile Pages</p>
       <img 
         src="/prototype_refine_setting_profile_1.jpg" 
         alt="prototype_refine_setting_profile_1" 
         style={styles.image}
       />
     </div>
+
     <div style={styles.imageContainer}>
-    <p style={{ textAlign: 'left' }}>Setting Profile for Professor</p>
       <img 
         src="/prototype_refine_setting_profile_2.jpg" 
         alt="prototype_refine_setting_profile_2" 
+        style={styles.image}
+      />
+    </div>
+
+    <div style={styles.imageContainer}>
+    <p style={{ textAlign: 'left' }}>Search Result Refinement</p>
+      <img 
+        src="/prototype_refine_main_page.jpg" 
+        alt="prototype_refine_main_page" 
+        style={styles.image}
+      />
+    </div>
+
+    <div style={styles.imageContainer}>
+    <p style={{ textAlign: 'left' }}>Comparison Feature Refinement</p>
+      <img 
+        src="/prototype_refine_main_page.jpg" 
+        alt="prototype_refine_main_page" 
+        style={styles.image}
+      />
+    </div>
+
+    <div style={styles.imageContainer}>
+    <p style={{ textAlign: 'left' }}>Chat Interface Refinement</p>
+      <img 
+        src="/prototype_refine_main_page.jpg" 
+        alt="prototype_refine_main_page" 
         style={styles.image}
       />
     </div>
