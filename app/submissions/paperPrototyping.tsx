@@ -7,7 +7,7 @@ const PaperPrototyping = () => (
     <h1 style={styles.heading1}>(1) Prototype Photos</h1>
 
     <div style={styles.imageContainer}>
-      <p>1. Welcome page</p>
+      <p style={{ textAlign: 'left' }}>1. Welcome Page</p>
       <img 
         src="/prototyping_welcome_page.jpg" 
         alt="prototyping_welcome_page" 
@@ -16,6 +16,7 @@ const PaperPrototyping = () => (
     </div>
     
     <div style={styles.imageContainer}>
+    <p style={{ textAlign: 'left' }}>2. Setting Profile</p>
       <img 
         src="/prototyping_profile_setting.jpg" 
         alt="prototyping_profile_setting" 
@@ -25,6 +26,7 @@ const PaperPrototyping = () => (
 
 
     <div style={styles.imageContainer}>
+    <p style={{ textAlign: 'left' }}>3. Main Page</p>
       <img 
         src="/prototyping_main_page.jpg" 
         alt="prototyping main_page" 
@@ -33,6 +35,7 @@ const PaperPrototyping = () => (
     </div>
     
     <div style={styles.imageContainer}>
+    <p style={{ textAlign: 'left' }}>4. Advanced Search</p>
       <img 
         src="/prototyping_advanced_search.jpg" 
         alt="prototyping_advanced_search" 
@@ -41,6 +44,7 @@ const PaperPrototyping = () => (
     </div>
 
     <div style={styles.imageContainer}>
+    <p style={{ textAlign: 'left' }}>5. Advanced Search Result</p>
       <img 
         src="/prototyping_search_results.jpg" 
         alt="prototyping_search_results" 
@@ -49,6 +53,7 @@ const PaperPrototyping = () => (
     </div>
 
     <div style={styles.imageContainer}>
+    <p style={{ textAlign: 'left' }}>6. Detailed Profile</p>
       <img 
         src="/prototyping_detailed_profile.jpg" 
         alt="prototyping_detailed_profile" 
@@ -57,6 +62,7 @@ const PaperPrototyping = () => (
     </div>
 
     <div style={styles.imageContainer}>
+    <p style={{ textAlign: 'left' }}>7. AI Powered Search</p>
       <img 
         src="/prototyping_ai_search.jpg" 
         alt="prototyping_ai_search" 
@@ -65,6 +71,7 @@ const PaperPrototyping = () => (
     </div>
 
     <div style={styles.imageContainer}>
+    <p style={{ textAlign: 'left' }}>8. Comparison</p>
       <img 
         src="/prototyping_ai_compare.jpg" 
         alt="prototyping_ai_compare" 
@@ -73,6 +80,7 @@ const PaperPrototyping = () => (
     </div>
 
     <div style={styles.imageContainer}>
+    <p style={{ textAlign: 'left' }}>9. Refine AI Search Query</p>
       <img 
         src="/prototyping_ai_search_refine.jpg" 
         alt="prototyping_ai_search_refine" 
@@ -81,6 +89,7 @@ const PaperPrototyping = () => (
     </div>
 
     <div style={styles.imageContainer}>
+    <p style={{ textAlign: 'left' }}>10. Chat</p>
       <img 
         src="/prototyping_chat.jpg" 
         alt="prototyping_chat" 
