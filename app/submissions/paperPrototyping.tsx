@@ -7,6 +7,7 @@ const PaperPrototyping = () => (
     <h1 style={styles.heading1}>(1) Prototype Photos</h1>
 
     <div style={styles.imageContainer}>
+      <p>1. Welcome page</p>
       <img 
         src="/prototyping_welcome_page.jpg" 
         alt="prototyping_welcome_page" 
