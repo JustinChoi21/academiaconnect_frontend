@@ -198,6 +198,24 @@ const PaperPrototyping = () => (
         We added a tooltip and brief description explaining how to effectively use the search options.
       </li>
     </ul>
+    <br />
+
+    <div style={styles.imageContainer}>
+    <p style={{ textAlign: 'left' }}>Setting Profile for Student</p>
+      <img 
+        src="/prototype_refine_setting_profile_1.jpg" 
+        alt="prototype_refine_setting_profile_1" 
+        style={styles.image}
+      />
+    </div>
+    <div style={styles.imageContainer}>
+    <p style={{ textAlign: 'left' }}>Setting Profile for Professor</p>
+      <img 
+        src="/prototype_refine_setting_profile_2.jpg" 
+        alt="prototype_refine_setting_profile_2" 
+        style={styles.image}
+      />
+    </div>
 
   </div>
 );
