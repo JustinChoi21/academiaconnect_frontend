@@ -229,8 +229,8 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>Search Result Refinement</p>
       <img 
-        src="/prototype_refine_main_page.jpg" 
-        alt="prototype_refine_main_page" 
+        src="/prototype_refine_search_result.jpg" 
+        alt="prototype_refine_search_result" 
         style={styles.image}
       />
     </div>
@@ -238,8 +238,8 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>Comparison Feature Refinement</p>
       <img 
-        src="/prototype_refine_main_page.jpg" 
-        alt="prototype_refine_main_page" 
+        src="/prototype_refine_comparison.jpg" 
+        alt="prototype_refine_comparison" 
         style={styles.image}
       />
     </div>
@@ -247,8 +247,8 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>Chat Interface Refinement</p>
       <img 
-        src="/prototype_refine_main_page.jpg" 
-        alt="prototype_refine_main_page" 
+        src="/prototype_refine_chat.jpg" 
+        alt="prototype_refine_chat" 
         style={styles.image}
       />
     </div>
