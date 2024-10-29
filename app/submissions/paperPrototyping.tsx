@@ -174,13 +174,13 @@ const PaperPrototyping = () => (
     </p>
     <ul style={styles.list}>
       <li>
-        <b>1. Improving Research Interest Selection:</b><br></br>
-        We updated the checkbox design for selecting research interests in profile setting page to make it clearer. Separating the profile settings into distinct pages for students and professors.
+        <b>1. Improving the Setting Profile Page:</b><br></br>
+        We updated the checkbox design for selecting research interests on the profile settings page to make it clearer. Additionally, we separated the profile settings into distinct pages for students and professors.
       </li>
       <br />
       <li>
         <b>2. Relocating the Professor Promotion Box:</b><br></br> 
-        We moved the professor promotion box from the profile setup page to the main page to ensure it appears in a more relevant context.
+        We moved the professor promotion box from the setting profile page to the main page to ensure it appears in a more relevant context.
       </li>
       <br />
       <li>
@@ -189,25 +189,16 @@ const PaperPrototyping = () => (
       </li>
       <br />
       <li>
-        <b>4. Enhancing Messaging Features:</b><br></br>
-        We introduced the option to attach files within messages, improving communication between users.
+        <b>4. Providing More Guidance:</b><br></br>
+        We added a brief description explaining how to effectively use the search bar and provide matching scores for the comparison feature.
       </li>
       <br />
       <li>
-        <b>5. Providing More Guidance:</b><br></br>
-        We added a brief description explaining how to effectively use the search bar and provide matching scores for the comparison feature.
+        <b>5. Enhancing Messaging Features:</b><br></br>
+        We introduced the option to attach files within messages, improving communication between users.
       </li>
     </ul>
     <br />
-
-    <div style={styles.imageContainer}>
-    <p style={{ textAlign: 'left' }}>Main Page Refinement</p>
-      <img 
-        src="/prototype_refine_main_page.jpg" 
-        alt="prototype_refine_main_page" 
-        style={styles.image}
-      />
-    </div>
 
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>Separating Profile Pages</p>
@@ -222,6 +213,15 @@ const PaperPrototyping = () => (
       <img 
         src="/prototype_refine_setting_profile_2.jpg" 
         alt="prototype_refine_setting_profile_2" 
+        style={styles.image}
+      />
+    </div>
+
+    <div style={styles.imageContainer}>
+    <p style={{ textAlign: 'left' }}>Main Page Refinement</p>
+      <img 
+        src="/prototype_refine_main_page.jpg" 
+        alt="prototype_refine_main_page" 
         style={styles.image}
       />
     </div>
