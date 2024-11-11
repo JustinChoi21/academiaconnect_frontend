@@ -6,37 +6,38 @@ const ComputerPrototyping = () => (
 
     <h2 style={styles.heading2}>1. Link to Prototype</h2>
     <p style={styles.paragraph}>
-      Explore our high-fidelity prototype created in Figma to see the detailed design and functionality of the AcademiaConnect platform. This prototype reflects our task analysis and insights from the paper prototyping stage.
+      Our high-fidelity prototype was created in Figma to showcase the detailed design and functionality of the AcademiaConnect platform. This prototype reflects insights from our task analysis and paper prototyping stage.
     </p>
     <p style={styles.paragraph}>
       <b>Link to Prototype:</b> <br />
-      <a href="your_figma_prototype_link_here" target="_blank" rel="noopener noreferrer">
-        View the AcademiaConnect Prototype on Figma
+      <a href="https://www.figma.com/proto/4tKEWkik7aURfOwXfAu6oa/Step-5---Computer-Prototyping?page-id=0%3A1&node-id=72-523&node-type=canvas&viewport=213%2C-355%2C0.38&t=vW0NhxSXxeT3ymov-1&scaling=contain&content-scaling=fixed&starting-point-node-id=72%3A523&share=1" target="_blank" rel="noopener noreferrer">
+        Open Figma Prototype
       </a>
     </p>
 
     <h2 style={styles.heading2}>2. Instructions to Run the Prototype</h2>
     <ul style={styles.list}>
       <li>
-        <b>Accessing the Prototype:</b> Click the link above to open the Figma prototype. Ensure you are logged into Figma, ideally with an education account for full access.
+        <b>1) Access the Prototype:</b> Click the link above to open the Figma prototype.
       </li>
       <li>
-        <b>Navigating the Prototype:</b> Use the navigation bar on the left to switch between screens (e.g., Home, Profile, Advanced Search). You can interact with elements like buttons, links, and form fields by clicking on them within the prototype view.
+        <b>2) Navigate the Prototype:</b> Use the navigation bar on the left to switch between different screens (e.g., Home, Search, Communication, Profile).
       </li>
       <li>
-        <b>Key Features to Explore:</b> <br />
+        <b>3) Key Features to Explore:</b> <br />
         <ul>
-          <li><b>Home Screen:</b> Discover your perfect academic match by exploring search options.</li>
-          <li><b>Profile Setup:</b> Create or view detailed student/professor profiles.</li>
-          <li><b>Search Functions:</b> Use both keyword-based and AI-powered search to find relevant collaborators or mentors.</li>
-          <li><b>Messaging System:</b> Initiate direct communication with matched users.</li>
+          <li><b>Login Page:</b> Click on &quot;Sign Up&quot; to proceed to the registration page.</li>
+          <li><b>Sign-Up Page:</b> Complete the form and click &quot;Sign Up&quot; to go to the profile setup page.</li>
+          <li><b>Profile Setup:</b> Enter your profile details and click &quot;Save and Continue&quot; to access the home screen.</li>
+          <li><b>Home Screen:</b> Click &quot;Find&quot; to view search results.</li>
+          <li><b>Search Results:</b> Use the &quot;Compare&quot; button to go to the comparison page.</li>
+          <li><b>Compare Page:</b> Select &quot;View Profile&quot; to see detailed profile information.</li>
+          <li><b>Detailed Profile:</b> Click &quot;Chat&quot; to initiate a conversation on the chat screen.</li>
+          <li><b>Chat Screen:</b> Navigate to other sections using the sidebar.</li>
         </ul>
       </li>
       <li>
-        <b>Prototype Controls:</b> Use the right and left arrow keys on your keyboard to move between screens in sequence. If you get lost, click on the navigation sidebar to go back to a specific page.
-      </li>
-      <li>
-        <b>Feedback:</b> This is still an evolving prototype, and any feedback is welcome! Please feel free to share comments directly within the Figma file or through our designated feedback form (link if applicable).
+        <b>Prototype Controls:</b> Use the right and left arrow keys to navigate through screens sequentially. If needed, click the sidebar to directly access a specific page.
       </li>
     </ul>
   </div>
