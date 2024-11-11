@@ -20,20 +20,22 @@ const ComputerPrototyping = () => (
       <li>
         <b>1) Access the Prototype:</b> Click the link above to open the Figma prototype.
       </li>
+      <br></br>
       <li>
         <b>2) Navigate the Prototype:</b> Use the navigation bar on the left to switch between different screens (e.g., Home, Search, Communication, Profile).
       </li>
+      <br></br>
       <li>
         <b>3) Key Features to Explore:</b> <br />
         <ul>
-          <li><b>Login Page:</b> Click on &quot;Sign Up&quot; to proceed to the registration page.</li>
-          <li><b>Sign-Up Page:</b> Complete the form and click &quot;Sign Up&quot; to go to the profile setup page.</li>
-          <li><b>Profile Setup:</b> Enter your profile details and click &quot;Save and Continue&quot; to access the home screen.</li>
-          <li><b>Home Screen:</b> Click &quot;Find&quot; to view search results.</li>
-          <li><b>Search Results:</b> Use the &quot;Compare&quot; button to go to the comparison page.</li>
-          <li><b>Compare Page:</b> Select &quot;View Profile&quot; to see detailed profile information.</li>
-          <li><b>Detailed Profile:</b> Click &quot;Chat&quot; to initiate a conversation on the chat screen.</li>
-          <li><b>Chat Screen:</b> Navigate to other sections using the sidebar.</li>
+          <li><b>- Login Page:</b> Click on &quot;Sign Up&quot; to proceed to the registration page.</li>
+          <li><b>- Sign-Up Page:</b> Complete the form and click &quot;Sign Up&quot; to go to the profile setup page.</li>
+          <li><b>- Profile Setup:</b> Enter your profile details and click &quot;Save and Continue&quot; to access the home screen.</li>
+          <li><b>- Home Screen:</b> Click &quot;Find&quot; to view search results.</li>
+          <li><b>- Search Results:</b> Use the &quot;Compare&quot; button to go to the comparison page.</li>
+          <li><b>- Compare Page:</b> Select &quot;View Profile&quot; to see detailed profile information.</li>
+          <li><b>- Detailed Profile:</b> Click &quot;Chat&quot; to initiate a conversation on the chat screen.</li>
+          <li><b>- Chat Screen:</b> Navigate to other sections using the sidebar.</li>
         </ul>
       </li>
       <li>
