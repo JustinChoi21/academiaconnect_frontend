@@ -38,6 +38,7 @@ const ComputerPrototyping = () => (
           <li><b>- Chat Screen:</b> Navigate to other sections using the sidebar.</li>
         </ul>
       </li>
+      <br></br>
       <li>
         <b>Prototype Controls:</b> Use the right and left arrow keys to navigate through screens sequentially. If needed, click the sidebar to directly access a specific page.
       </li>
