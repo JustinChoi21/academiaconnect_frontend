@@ -9,8 +9,8 @@ const ComputerPrototyping = () => (
       Our high-fidelity prototype was created in Figma to showcase the detailed design and functionality of the AcademiaConnect platform. This prototype reflects insights from our task analysis and paper prototyping stage.
     </p>
     <p style={styles.paragraph}>
-      <b>Link to Prototype:</b>
-      <a href="https://www.figma.com/proto/4tKEWkik7aURfOwXfAu6oa/Step-5---Computer-Prototyping?page-id=0%3A1&node-id=72-523&node-type=canvas&viewport=213%2C-355%2C0.38&t=vW0NhxSXxeT3ymov-1&scaling=contain&content-scaling=fixed&starting-point-node-id=72%3A523&share=1" target="_blank" rel="noopener noreferrer">
+      <b>Link to Prototype: </b>
+      <a href="https://www.figma.com/proto/4tKEWkik7aURfOwXfAu6oa/Step-5---Computer-Prototyping?page-id=0%3A1&node-id=72-523&node-type=canvas&viewport=213%2C-355%2C0.38&t=vW0NhxSXxeT3ymov-1&scaling=contain&content-scaling=fixed&starting-point-node-id=72%3A523&share=1" target="_blank" rel="noopener noreferrer" style={{ color: "blue", textDecoration: "underline" }}>
         https://www.figma.com/proto/4tKEWkik7aURfOwXfAu6oa/Step-5---Computer-Prototyping?page-id=0%3A1&node-id=72-523&node-type=canvas&viewport=213%2C-355%2C0.38&t=vW0NhxSXxeT3ymov-1&scaling=contain&content-scaling=fixed&starting-point-node-id=72%3A523&share=1
       </a>
     </p>
@@ -73,9 +73,6 @@ const styles = {
     marginBottom: "15px",
     paddingLeft: "20px",
     color: "#000",
-  },
-  a: {
-    color: "blue",
   },
 };
 
