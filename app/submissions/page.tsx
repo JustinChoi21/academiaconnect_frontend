@@ -7,6 +7,7 @@ import TaskAnalysis from './taskAnalysis';
 import DomainAnalysis from './domainAnalysis';
 import Storyboards from './storyboards';
 import PaperPrototyping from './paperPrototyping';
+import ComputerPrototyping from './computerPrototyping';
 
 const SubmissionPage = () => {
   const [currentMenu, setCurrentMenu] = useState('proposal');
@@ -41,6 +42,8 @@ const SubmissionPage = () => {
         return <Storyboards />;
       case 'PaperPrototyping':
         return <PaperPrototyping />;
+      case 'ComputerPrototyping':
+        return <ComputerPrototyping />;
       default:
         return <p>Select a menu item to see its content.</p>;
     }
@@ -128,6 +131,15 @@ const SubmissionPage = () => {
             style={currentMenu === 'PaperPrototyping' ? styles.activeMenuItem : styles.menuItem}
           >
             PaperPrototyping
+          </li>
+          <li
+            onClick={() => {
+              setCurrentMenu('ComputerPrototyping');
+              setMenuOpen(false);
+            }}
+            style={currentMenu === 'ComputerPrototyping' ? styles.activeMenuItem : styles.menuItem}
+          >
+            ComputerPrototyping
           </li>
         </ul>
 
