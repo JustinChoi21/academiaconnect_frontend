@@ -30,18 +30,14 @@ const ComputerPrototyping = () => (
         <br></br>
         <ul>
           <li><b>- Login Page:</b> Click on &quot;Sign Up&quot; to proceed to the registration page.</li>
-          <li><b>- Sign-Up Page:</b> Complete the form and click &quot;Sign Up&quot; to go to the profile setup page.</li>
-          <li><b>- Profile Setup:</b> Enter your profile details and click &quot;Save and Continue&quot; to access the home screen.</li>
+          <li><b>- Sign-Up Page:</b> Click &quot;Sign Up&quot; to go to the profile setup page.</li>
+          <li><b>- Profile Setup:</b> Click &quot;Save and Continue&quot; to access the home screen.</li>
           <li><b>- Home Screen:</b> Click &quot;Find&quot; to view search results.</li>
           <li><b>- Search Results:</b> Use the &quot;Compare&quot; button to go to the comparison page.</li>
           <li><b>- Compare Page:</b> Select &quot;View Profile&quot; to see detailed profile information.</li>
           <li><b>- Detailed Profile:</b> Click &quot;Chat&quot; to initiate a conversation on the chat screen.</li>
           <li><b>- Chat Screen:</b> Navigate to other sections using the sidebar.</li>
         </ul>
-      </li>
-      <br></br>
-      <li>
-        <b>Prototype Controls:</b> Use the right and left arrow keys to navigate through screens sequentially. If needed, click the sidebar to directly access a specific page.
       </li>
     </ul>
   </div>
