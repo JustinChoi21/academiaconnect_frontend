@@ -27,6 +27,7 @@ const ComputerPrototyping = () => (
       <br></br>
       <li>
         <b>3) Key Features to Explore:</b> <br />
+        <br></br>
         <ul>
           <li><b>- Login Page:</b> Click on &quot;Sign Up&quot; to proceed to the registration page.</li>
           <li><b>- Sign-Up Page:</b> Complete the form and click &quot;Sign Up&quot; to go to the profile setup page.</li>
