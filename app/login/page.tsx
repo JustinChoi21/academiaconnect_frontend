@@ -52,7 +52,7 @@ export default function LoginPage() {
           </form>
 
           <SignUpText>
-            Don't have an account? <Link href="/signup">Sign Up</Link>
+            Don&apos;t have an account? <Link href="/signup">Sign Up</Link>
           </SignUpText>
         </LoginContent>
       </LoginBox>
