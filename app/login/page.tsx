@@ -1,6 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase/config';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import styled from '@emotion/styled';
@@ -8,11 +11,25 @@ import styled from '@emotion/styled';
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement login logic
-    console.log('Login attempt with:', email, password);
+    setError('');
+    
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      console.log('Logged in user:', userCredential.user);
+      router.push('/home');
+    } catch (error: any) {
+      console.error('Login error:', error);
+      setError(
+        error.code === 'auth/invalid-credential'
+          ? 'Invalid email or password.'
+          : 'An error occurred during login.'
+      );
+    }
   };
 
   return (
@@ -23,6 +40,7 @@ export default function LoginPage() {
           <p>Discover new research areas, connect with collaborators</p>
           
           <form onSubmit={handleSubmit}>
+            {error && <ErrorMessage>{error}</ErrorMessage>}
             <InputGroup>
               <label htmlFor="email">Email*</label>
               <input
@@ -181,4 +199,13 @@ const IllustrationBox = styled.div`
   padding: 0;
   position: relative;
   overflow: hidden;
+`;
+
+const ErrorMessage = styled.div`
+  color: #ff0000;
+  background-color: #ffe6e6;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
 `; 
