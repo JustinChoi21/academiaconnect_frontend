@@ -9,7 +9,7 @@ const Storyboards = () => (
     
     <div style={styles.imageContainer}>
       <img 
-        src="/task_1.jpg" 
+        src="/submissions/task_1.jpg" 
         alt="Task1" 
         style={styles.image}
       />
@@ -23,7 +23,7 @@ const Storyboards = () => (
     
     <div style={styles.imageContainer}>
       <img 
-        src="/task_2_1.jpg" 
+        src="/submissions/task_2_1.jpg" 
         alt="Task2" 
         style={styles.image}
       />
@@ -37,7 +37,7 @@ const Storyboards = () => (
     
     <div style={styles.imageContainer}>
       <img 
-        src="/task_3.jpg" 
+        src="/submissions/task_3.jpg" 
         alt="Task3" 
         style={styles.image}
       />
@@ -51,7 +51,7 @@ const Storyboards = () => (
     
     <div style={styles.imageContainer}>
       <img 
-        src="/task_4.jpg" 
+        src="/submissions/task_4.jpg" 
         alt="Task4" 
         style={styles.image}
       />
@@ -67,37 +67,37 @@ const Storyboards = () => (
     
     <div style={styles.imageContainer}>
       <img 
-        src="/task_1.jpg" 
+        src="/submissions/task_1.jpg" 
         alt="Task1" 
         style={styles.image}
       />
       <img 
-        src="/task_1_2.jpg" 
+        src="/submissions/task_1_2.jpg" 
         alt="Task1-2" 
         style={styles.image}
       />
       <img 
-        src="/task_2_1.jpg" 
+        src="/submissions/task_2_1.jpg" 
         alt="Task1" 
         style={styles.image}
       />
       <img 
-        src="/task_2_2.jpg" 
+        src="/submissions/task_2_2.jpg" 
         alt="Task1" 
         style={styles.image}
       />
       <img 
-        src="/task_3.jpg" 
+        src="/submissions/task_3.jpg" 
         alt="Task1" 
         style={styles.image}
       />
       <img 
-        src="/task_4.jpg" 
+        src="/submissions/task_4.jpg" 
         alt="Task1" 
         style={styles.image}
       />
       <img 
-        src="/task_4_2.jpg" 
+        src="/submissions/task_4_2.jpg" 
         alt="Task1" 
         style={styles.image}
       />

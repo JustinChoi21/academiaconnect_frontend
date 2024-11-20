@@ -9,7 +9,7 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
       <p style={{ textAlign: 'left' }}>1. Welcome Page</p>
       <img 
-        src="/prototyping_welcome_page.jpg" 
+        src="/submissions/prototyping_welcome_page.jpg" 
         alt="prototyping_welcome_page" 
         style={styles.image}
       />
@@ -18,7 +18,7 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>2. Setting Profile</p>
       <img 
-        src="/prototyping_profile_setting.jpg" 
+        src="/submissions/prototyping_profile_setting.jpg" 
         alt="prototyping_profile_setting" 
         style={styles.image}
       />
@@ -28,7 +28,7 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>3. Main Page</p>
       <img 
-        src="/prototyping_main_page.jpg" 
+        src="/submissions/prototyping_main_page.jpg" 
         alt="prototyping main_page" 
         style={styles.image}
       />
@@ -37,7 +37,7 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>4. Advanced Search</p>
       <img 
-        src="/prototyping_advanced_search.jpg" 
+        src="/submissions/prototyping_advanced_search.jpg" 
         alt="prototyping_advanced_search" 
         style={styles.image}
       />
@@ -46,7 +46,7 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>5. Advanced Search Result</p>
       <img 
-        src="/prototyping_search_results.jpg" 
+        src="/submissions/prototyping_search_results.jpg" 
         alt="prototyping_search_results" 
         style={styles.image}
       />
@@ -55,7 +55,7 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>6. Detailed Profile</p>
       <img 
-        src="/prototyping_detailed_profile.jpg" 
+        src="/submissions/prototyping_detailed_profile.jpg" 
         alt="prototyping_detailed_profile" 
         style={styles.image}
       />
@@ -64,7 +64,7 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>7. AI Powered Search</p>
       <img 
-        src="/prototyping_ai_search.jpg" 
+        src="/submissions/prototyping_ai_search.jpg" 
         alt="prototyping_ai_search" 
         style={styles.image}
       />
@@ -73,7 +73,7 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>8. Comparison</p>
       <img 
-        src="/prototyping_ai_compare.jpg" 
+        src="/submissions/prototyping_ai_compare.jpg" 
         alt="prototyping_ai_compare" 
         style={styles.image}
       />
@@ -82,7 +82,7 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>9. Refine AI Search Query</p>
       <img 
-        src="/prototyping_ai_search_refine.jpg" 
+        src="/submissions/prototyping_ai_search_refine.jpg" 
         alt="prototyping_ai_search_refine" 
         style={styles.image}
       />
@@ -91,7 +91,7 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>10. Chat</p>
       <img 
-        src="/prototyping_chat.jpg" 
+        src="/submissions/prototyping_chat.jpg" 
         alt="prototyping_chat" 
         style={styles.image}
       />
@@ -108,7 +108,7 @@ const PaperPrototyping = () => (
     </p>
     <div style={styles.imageContainer}>
       <img 
-        src="/prototyping_breifing.jpg" 
+        src="/submissions/prototyping_breifing.jpg" 
         alt="prototyping_breifing" 
         style={styles.image}
       />
@@ -134,7 +134,7 @@ const PaperPrototyping = () => (
 
     <div style={styles.imageContainer}>
       <img 
-        src="/prototyping_tasks.jpg" 
+        src="/submissions/prototyping_tasks.jpg" 
         alt="prototyping_tasks" 
         style={styles.image}
       />
@@ -203,7 +203,7 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>Separating Profile Pages</p>
       <img 
-        src="/prototype_refine_setting_profile_1.jpg" 
+        src="/submissions/prototype_refine_setting_profile_1.jpg" 
         alt="prototype_refine_setting_profile_1" 
         style={styles.image}
       />
@@ -211,7 +211,7 @@ const PaperPrototyping = () => (
 
     <div style={styles.imageContainer}>
       <img 
-        src="/prototype_refine_setting_profile_2.jpg" 
+        src="/submissions/prototype_refine_setting_profile_2.jpg" 
         alt="prototype_refine_setting_profile_2" 
         style={styles.image}
       />
@@ -220,7 +220,7 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>Main Page Refinement</p>
       <img 
-        src="/prototype_refine_main_page.jpg" 
+        src="/submissions/prototype_refine_main_page.jpg" 
         alt="prototype_refine_main_page" 
         style={styles.image}
       />
@@ -229,7 +229,7 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>Search Result Refinement</p>
       <img 
-        src="/prototype_refine_search_result.jpg" 
+        src="/submissions/prototype_refine_search_result.jpg" 
         alt="prototype_refine_search_result" 
         style={styles.image}
       />
@@ -238,7 +238,7 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>Comparison Feature Refinement</p>
       <img 
-        src="/prototype_refine_comparison.jpg" 
+        src="/submissions/prototype_refine_comparison.jpg" 
         alt="prototype_refine_comparison" 
         style={styles.image}
       />
@@ -247,7 +247,7 @@ const PaperPrototyping = () => (
     <div style={styles.imageContainer}>
     <p style={{ textAlign: 'left' }}>Chat Interface Refinement</p>
       <img 
-        src="/prototype_refine_chat.jpg" 
+        src="/submissions/prototype_refine_chat.jpg" 
         alt="prototype_refine_chat" 
         style={styles.image}
       />

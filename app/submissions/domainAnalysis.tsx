@@ -14,7 +14,7 @@ const DomainAnalysis = () => (
     
     <div style={styles.imageContainer}>
       <img 
-        src="/AcademiaConnect ER Diagram.drawio.png" 
+        src="/submissions/AcademiaConnect ER Diagram.drawio.png" 
         alt="Entity-Relationship Diagram" 
         style={styles.image}
       />
