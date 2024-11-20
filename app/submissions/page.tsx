@@ -133,7 +133,7 @@ const SubmissionPage = () => {
             }}
             style={currentMenu === 'PaperPrototyping' ? styles.activeMenuItem : styles.menuItem}
           >
-            PaperPrototyping
+            Paper Prototyping
           </li>
           <li
             onClick={() => {
@@ -142,7 +142,7 @@ const SubmissionPage = () => {
             }}
             style={currentMenu === 'ComputerPrototyping' ? styles.activeMenuItem : styles.menuItem}
           >
-            ComputerPrototyping
+            Computer Prototyping
           </li>
           <li
             onClick={() => {
