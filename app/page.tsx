@@ -7,6 +7,7 @@ export default function Home() {
       <h1 style={titleStyle}>CS 615 User Design Interface Team Project</h1>
       <h2 style={subtitleStyle}>Academia Connect</h2>
       <a href="/submissions" style={linkStyle}>submissions</a>
+      <a href="/login" style={linkStyle}>Implementation</a>
     </div>
   );
 }
