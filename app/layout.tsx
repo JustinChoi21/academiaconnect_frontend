@@ -4,6 +4,12 @@ import { useEffect, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase/config';
 import Sidebar from './components/Sidebar/Sidebar';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export default function RootLayout({
   children,
@@ -29,7 +35,7 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <body>
         <div style={{ display: 'flex' }}>
           {!isAuthPage && user && <Sidebar />}
