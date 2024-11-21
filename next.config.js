@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-    domains: ['your-external-domain.com'],
+    domains: ['academiaconnect.com'],
   },
 } 

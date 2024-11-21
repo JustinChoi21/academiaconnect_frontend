@@ -1,6 +1,5 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './Comparison.module.css';
 
@@ -15,7 +14,7 @@ interface ResearcherComparison {
   image: string;
 }
 
-const researcher1: ResearcherComparison = {
+const _researcher1: ResearcherComparison = {
   name: "Dr. Emily Johnson",
   university: "ABC University",
   researchInterests: "Machine Learning, Deep Learning, Bio Chemistry",
@@ -26,7 +25,7 @@ const researcher1: ResearcherComparison = {
   image: "/implement/search_result/profile1.png"
 };
 
-const researcher2: ResearcherComparison = {
+const _researcher2: ResearcherComparison = {
   name: "Dr. Michael Thompson",
   university: "MMN University",
   researchInterests: "Black Hole Physics, Interstellar Medium, Gravitational",
