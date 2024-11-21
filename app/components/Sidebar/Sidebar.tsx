@@ -24,7 +24,6 @@ export default function Sidebar() {
       icon: '💬',
       label: 'Communication',
       path: '/chat',
-    //   badge: 24
     },
     {
       icon: '👤',
@@ -66,7 +65,6 @@ export default function Sidebar() {
           >
             <span className={styles.icon}>{item.icon}</span>
             <span className={styles.label}>{item.label}</span>
-            {/* {item.badge && <span className={styles.badge}>{item.badge}</span>} */}
           </Link>
         ))}
       </div>
@@ -77,7 +75,8 @@ export default function Sidebar() {
             <button 
               key={index}
               onClick={item.onClick}
-              className={styles.menuItem}
+              className={`${styles.menuItem} ${styles.menuItemButton}`}
+              type="button"
             >
               <span className={styles.icon}>{item.icon}</span>
               <span className={styles.label}>{item.label}</span>

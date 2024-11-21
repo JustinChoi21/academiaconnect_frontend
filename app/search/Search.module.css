@@ -100,4 +100,94 @@
 .compareButton:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+.filtersSection {
+  background-color: #f5f5f5;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.expandButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.expandButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.filtersGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-height: 500px;
+  opacity: 1;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.filtersGrid.collapsed {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  pointer-events: none;
+}
+
+.filterItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filterLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clearButton {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.filterInput,
+.filterSelect {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.filtersButton.active {
+  background-color: #f5f5f5;
+  border-color: #999;
+}
+
+.filtersButton .arrow {
+  transition: transform 0.3s ease;
+}
+
+.filtersButton.active .arrow {
+  transform: rotate(180deg);
 } 

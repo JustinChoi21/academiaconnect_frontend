@@ -59,10 +59,77 @@ const researchers: Researcher[] = [
   }
 ];
 
+interface FilterValue {
+  text: string;
+  select: string;
+}
+
+interface FilterState {
+  [key: string]: FilterValue;
+}
+
 export default function SearchPage() {
   const router = useRouter();
   const [selectedProfiles, setSelectedProfiles] = useState<number[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isFiltersVisible, setIsFiltersVisible] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
+
+  // 필터 상태 관리
+  const [filterValues, setFilterValues] = useState<FilterState>({
+    Region: { text: '', select: '' },
+    State: { text: '', select: '' },
+    Language: { text: '', select: '' },
+    'Skill set': { text: '', select: '' },
+    University: { text: '', select: '' },
+    Institution: { text: '', select: '' },
+    'Research Type': { text: '', select: '' },
+    'Search Scope': { text: '', select: '' },
+  });
+
+  const filters = [
+    { name: 'Region', type: 'text' },
+    { 
+      name: 'State', 
+      type: 'select',
+      options: ['California', 'New York', 'Texas', 'Florida', 'Illinois']
+    },
+    { 
+      name: 'Language', 
+      type: 'select',
+      options: ['English', 'Spanish', 'Chinese', 'Korean', 'Japanese']
+    },
+    { name: 'Skill set', type: 'text' },
+    { name: 'University', type: 'text' },
+    { name: 'Institution', type: 'text' },
+    { 
+      name: 'Research Type', 
+      type: 'select',
+      options: ['Academic', 'Industry', 'Government', 'Clinical', 'Applied']
+    },
+    { 
+      name: 'Search Scope', 
+      type: 'select',
+      options: ['All', 'Professors', 'Research Labs', 'Projects', 'Papers']
+    },
+  ];
+
+  const handleFilterChange = (filterName: string, value: string, type: 'text' | 'select') => {
+    setFilterValues(prev => ({
+      ...prev,
+      [filterName]: {
+        ...prev[filterName],
+        [type]: value
+      }
+    }));
+  };
+
+  const handleClear = (filterName: string) => {
+    setFilterValues(prev => ({
+      ...prev,
+      [filterName]: { text: '', select: '' }
+    }));
+  };
 
   const toggleProfile = (id: number) => {
     setSelectedProfiles(prev => {
@@ -111,11 +178,70 @@ export default function SearchPage() {
         >
           Compare {selectedProfiles.length > 0 ? `(${selectedProfiles.length})` : ''}
         </button>
-        <button className={styles.filtersButton}>
+        <button 
+          className={`${styles.filtersButton} ${isFiltersVisible ? styles.active : ''}`}
+          onClick={() => setIsFiltersVisible(!isFiltersVisible)}
+        >
           Filters
           <span className={styles.arrow}>▼</span>
         </button>
       </div>
+
+      {isFiltersVisible && (
+        <div className={styles.filtersSection}>
+          <div className={styles.filterHeader}>
+            <h2>Filters</h2>
+            <button 
+              className={`${styles.expandButton} ${!isExpanded ? styles.collapsed : ''}`}
+              onClick={() => setIsExpanded(!isExpanded)}
+            >
+              {isExpanded ? 'Collapse' : 'Expand'}
+            </button>
+          </div>
+          
+          <div className={`${styles.filtersGrid} ${!isExpanded ? styles.collapsed : ''}`}>
+            {isExpanded && filters.map((filter, index) => (
+              <div key={index} className={styles.filterItem}>
+                <div className={styles.filterLabel}>
+                  <span>{filter.name}</span>
+                  <button 
+                    className={styles.clearButton}
+                    onClick={() => handleClear(filter.name)}
+                    style={{ 
+                      opacity: filterValues[filter.name][filter.type] ? 1 : 0.5,
+                      cursor: filterValues[filter.name][filter.type] ? 'pointer' : 'default'
+                    }}
+                  >
+                    Clear
+                  </button>
+                </div>
+                {filter.type === 'text' ? (
+                  <input 
+                    type="text" 
+                    placeholder="Keyword" 
+                    className={styles.filterInput}
+                    value={filterValues[filter.name].text}
+                    onChange={(e) => handleFilterChange(filter.name, e.target.value, 'text')}
+                  />
+                ) : (
+                  <select 
+                    className={styles.filterSelect}
+                    value={filterValues[filter.name].select}
+                    onChange={(e) => handleFilterChange(filter.name, e.target.value, 'select')}
+                  >
+                    <option value="">Select</option>
+                    {filter.options?.map((option, optionIndex) => (
+                      <option key={optionIndex} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className={styles.researcherGrid}>
         {researchers.map((researcher) => (

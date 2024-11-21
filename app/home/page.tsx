@@ -5,10 +5,135 @@ import Image from 'next/image';
 import styles from './home.module.css';
 import toast from 'react-hot-toast';
 
+interface FilterValue {
+  text: string;
+  select: string;
+}
+
+interface FilterState {
+  [key: string]: FilterValue;
+}
+
 export default function HomePage() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const searchInputRef = useRef<HTMLInputElement>(null);
+  
+  // 필터 상태 관리
+  const [filterValues, setFilterValues] = useState<FilterState>({
+    Region: { text: '', select: '' },
+    State: { text: '', select: '' },
+    Language: { text: '', select: '' },
+    'Skill set': { text: '', select: '' },
+    University: { text: '', select: '' },
+    Institution: { text: '', select: '' },
+    'Research Type': { text: '', select: '' },
+    'Search Scope': { text: '', select: '' },
+  });
+
+  const filters = [
+    { 
+      name: 'Region', 
+      type: 'text' 
+    },
+    { 
+      name: 'State', 
+      type: 'select',
+      options: [
+        'California',
+        'New York',
+        'Texas',
+        'Florida',
+        'Illinois',
+        'Pennsylvania',
+        'Ohio',
+        'Michigan',
+        'Georgia',
+        'North Carolina'
+      ]
+    },
+    { 
+      name: 'Language', 
+      type: 'select',
+      options: [
+        'English',
+        'Spanish',
+        'Chinese',
+        'Korean',
+        'Japanese',
+        'French',
+        'German',
+        'Italian',
+        'Portuguese',
+        'Russian'
+      ]
+    },
+    { 
+      name: 'Skill set', 
+      type: 'text'
+    },
+    { 
+      name: 'University', 
+      type: 'text' 
+    },
+    { 
+      name: 'Institution', 
+      type: 'text'
+    },
+    { 
+      name: 'Research Type', 
+      type: 'select',
+      options: [
+        'Academic Research',
+        'Industry Research',
+        'Government Research',
+        'Clinical Research',
+        'Applied Research',
+        'Basic Research',
+        'Experimental Research',
+        'Theoretical Research',
+        'Quantitative Research',
+        'Qualitative Research'
+      ]
+    },
+    { 
+      name: 'Search Scope', 
+      type: 'select',
+      options: [
+        'All',
+        'Professors',
+        'Research Labs',
+        'Research Projects',
+        'Research Papers',
+        'Conferences',
+        'Journals',
+        'Patents',
+        'Funding Opportunities',
+        'Collaborations'
+      ]
+    },
+  ];
+
+  const [isExpanded, setIsExpanded] = useState(true);
+
+  // 필터 값 변경 핸들러
+  const handleFilterChange = (filterName: string, value: string, type: 'text' | 'select') => {
+    setFilterValues(prev => ({
+      ...prev,
+      [filterName]: {
+        ...prev[filterName],
+        [type]: value
+      }
+    }));
+  };
+
+  // 필터 초기화 핸들러
+  const handleClear = (filterName: string) => {
+    setFilterValues(prev => ({
+      ...prev,
+      [filterName]: { text: '', select: '' }
+    }));
+  };
 
   const handleSearch = () => {
     if (searchQuery.trim()) {
@@ -24,17 +149,6 @@ export default function HomePage() {
       handleSearch();
     }
   };
-
-  const filters = [
-    { name: 'Region', type: 'text' },
-    { name: 'State', type: 'select' },
-    { name: 'Language', type: 'select' },
-    { name: 'Skill set', type: 'select' },
-    { name: 'University', type: 'text' },
-    { name: 'Institution', type: 'select' },
-    { name: 'Research Type', type: 'select' },
-    { name: 'Search Scope', type: 'select' },
-  ];
 
   const suggestedContents = [
     {
@@ -80,23 +194,52 @@ export default function HomePage() {
       <div className={styles.filtersSection}>
         <div className={styles.filterHeader}>
           <h2>Filters</h2>
-          <button className={styles.expandButton}>Expand</button>
+          <button 
+            className={`${styles.expandButton} ${!isExpanded ? styles.collapsed : ''}`}
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            {isExpanded ? 'Collapse' : 'Expand'}
+          </button>
         </div>
         
-        <div className={styles.filtersGrid}>
-          {filters.map((filter, index) => (
+        <div className={`${styles.filtersGrid} ${!isExpanded ? styles.collapsed : ''}`}>
+          {isExpanded && filters.map((filter, index) => (
             <div key={index} className={styles.filterItem}>
               <div className={styles.filterLabel}>
                 <span>{filter.name}</span>
-                <button className={styles.clearButton}>Clear</button>
+                <button 
+                  className={styles.clearButton}
+                  onClick={() => handleClear(filter.name)}
+                  style={{ 
+                    opacity: filterValues[filter.name][filter.type] ? 1 : 0.5,
+                    cursor: filterValues[filter.name][filter.type] ? 'pointer' : 'default'
+                  }}
+                >
+                  Clear
+                </button>
               </div>
               {filter.type === 'text' ? (
                 <div className={styles.searchInputWrapper}>
-                  <input type="text" placeholder="Keyword" className={styles.filterInput} />
+                  <input 
+                    type="text" 
+                    placeholder="Keyword" 
+                    className={styles.filterInput}
+                    value={filterValues[filter.name].text}
+                    onChange={(e) => handleFilterChange(filter.name, e.target.value, 'text')}
+                  />
                 </div>
               ) : (
-                <select className={styles.filterSelect}>
+                <select 
+                  className={styles.filterSelect}
+                  value={filterValues[filter.name].select}
+                  onChange={(e) => handleFilterChange(filter.name, e.target.value, 'select')}
+                >
                   <option value="">Select</option>
+                  {filter.options?.map((option, optionIndex) => (
+                    <option key={optionIndex} value={option}>
+                      {option}
+                    </option>
+                  ))}
                 </select>
               )}
             </div>
