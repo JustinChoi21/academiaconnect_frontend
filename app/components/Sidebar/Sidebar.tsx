@@ -28,7 +28,7 @@ export default function Sidebar() {
     },
     {
       icon: '👤',
-      label: 'Profile',
+      label: 'My Profile',
       path: '/profile',
     },
   ];

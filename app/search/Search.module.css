@@ -1,0 +1,105 @@
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.searchHeader {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 12px 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.findButton {
+  padding: 12px 30px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.filtersButton {
+  padding: 12px 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 12px;
+}
+
+.researcherGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.researcherCard {
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.checkbox {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.profileImage {
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.university {
+  color: #666;
+  margin: 5px 0;
+}
+
+.description {
+  font-size: 14px;
+  color: #444;
+  margin: 10px 0;
+}
+
+.viewProfileButton {
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.compareButtonContainer {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.compareButton {
+  padding: 12px 40px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+} 
