@@ -39,7 +39,7 @@ export default function RootLayout({
       <body>
         <div style={{ display: 'flex' }}>
           {!isAuthPage && user && <Sidebar />}
-          <main style={{ flex: 1, marginLeft: !isAuthPage && user ? '250px' : '0' }}>
+          <main style={{ flex: 1, marginLeft: !isAuthPage && user ? '280px' : '0' }}>
             {children}
           </main>
         </div>

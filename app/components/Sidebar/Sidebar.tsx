@@ -11,20 +11,15 @@ export default function Sidebar() {
 
   const menuItems = [
     { 
-      icon: '🏠',
+      icon: '🔍',
       label: 'Home',
       path: '/home',
     },
     {
-      icon: '🔍',
-      label: 'Search',
-      path: '/search',
-    },
-    {
       icon: '💬',
       label: 'Communication',
-      path: '/communication',
-      badge: 24
+      path: '/chat',
+    //   badge: 24
     },
     {
       icon: '👤',

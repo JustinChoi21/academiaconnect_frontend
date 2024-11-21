@@ -1,0 +1,19 @@
+.chatContainer {
+  display: flex;
+  height: calc(100vh - 60px);
+  background: #fff;
+  overflow: hidden;
+}
+
+.chatList {
+  width: 350px;
+  border-right: 1px solid #e5e7eb;
+  overflow-y: auto;
+}
+
+.chatRoom {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+} 
