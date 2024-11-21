@@ -45,37 +45,51 @@ export default function Comparison() {
         <div className={styles.profilesGrid}>
           <div className={styles.profileCard}>
             <Image
-              src="/implement/search_result/profile1.png"
-              alt="Dr. Emily Johnson"
+              src={_researcher1.image}
+              alt={_researcher1.name}
               width={100}
               height={100}
               className={styles.profileImage}
             />
-            <h2>Dr. Emily Johnson</h2>
-            <p className={styles.university}>ABC University</p>
+            <h2>{_researcher1.name}</h2>
+            <p className={styles.university}>{_researcher1.university}</p>
             
             <div className={styles.infoSection}>
               <h3>Research Interests</h3>
-              <p>Machine Learning, Deep Learning, Bio Chemistry</p>
-              {/* 나머지 내용... */}
+              <p>{_researcher1.researchInterests}</p>
+              <h3>Research Type</h3>
+              <p>{_researcher1.researchType}</p>
+              <h3>Publications</h3>
+              <p>{_researcher1.publications}</p>
+              <h3>Projects</h3>
+              <p>{_researcher1.projects}</p>
+              <h3>Technologies</h3>
+              <p>{_researcher1.technologies}</p>
             </div>
           </div>
 
           <div className={styles.profileCard}>
             <Image
-              src="/implement/search_result/profile2.png"
-              alt="Dr. Michael Thompson"
+              src={_researcher2.image}
+              alt={_researcher2.name}
               width={100}
               height={100}
               className={styles.profileImage}
             />
-            <h2>Dr. Michael Thompson</h2>
-            <p className={styles.university}>MMN University</p>
+            <h2>{_researcher2.name}</h2>
+            <p className={styles.university}>{_researcher2.university}</p>
             
             <div className={styles.infoSection}>
               <h3>Research Interests</h3>
-              <p>Black Hole Physics, Interstellar Medium, Gravitational</p>
-              {/* 나머지 내용... */}
+              <p>{_researcher2.researchInterests}</p>
+              <h3>Research Type</h3>
+              <p>{_researcher2.researchType}</p>
+              <h3>Publications</h3>
+              <p>{_researcher2.publications}</p>
+              <h3>Projects</h3>
+              <p>{_researcher2.projects}</p>
+              <h3>Technologies</h3>
+              <p>{_researcher2.technologies}</p>
             </div>
           </div>
         </div>
