@@ -1,0 +1,82 @@
+.container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.profileInfo {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.profileImage {
+  border-radius: 50%;
+}
+
+.nameSection h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+.nameSection p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.connectButton, .chatButton {
+  padding: 12px 40px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.connectButton {
+  background-color: white;
+  border: 1px solid #000;
+}
+
+.chatButton {
+  background-color: white;
+  border: 1px solid #000;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.infoCard {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.infoCard h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.infoCard p {
+  margin: 0;
+  color: #444;
+  line-height: 1.5;
+}
+
+.sectionTitle {
+  margin-bottom: 20px;
+} 

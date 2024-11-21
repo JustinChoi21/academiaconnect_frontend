@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './Search.module.css';
 import Image from 'next/image';
 
@@ -58,6 +59,7 @@ const researchers: Researcher[] = [
 ];
 
 export default function SearchPage() {
+  const router = useRouter();
   const [selectedProfiles, setSelectedProfiles] = useState<number[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -80,6 +82,12 @@ export default function SearchPage() {
           onChange={(e) => setSearchQuery(e.target.value)}
         />
         <button className={styles.findButton}>Find</button>
+        <button 
+          className={styles.compareButton}
+          disabled={selectedProfiles.length === 0}
+        >
+          Compare {selectedProfiles.length > 0 ? `(${selectedProfiles.length})` : ''}
+        </button>
         <button className={styles.filtersButton}>
           Filters
           <span className={styles.arrow}>▼</span>
@@ -106,16 +114,15 @@ export default function SearchPage() {
             <h3>{researcher.name}</h3>
             <p className={styles.university}>{researcher.university}</p>
             <p className={styles.description}>{researcher.description}</p>
-            <button className={styles.viewProfileButton}>View Profile</button>
+            <button 
+              className={styles.viewProfileButton}
+              onClick={() => router.push('/detailed_profile')}
+            >
+              View Profile
+            </button>
           </div>
         ))}
       </div>
-
-      {selectedProfiles.length > 0 && (
-        <div className={styles.compareButtonContainer}>
-          <button className={styles.compareButton}>Compare</button>
-        </div>
-      )}
     </div>
   );
 } 
