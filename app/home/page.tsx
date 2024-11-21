@@ -1,10 +1,29 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './home.module.css';
+import toast from 'react-hot-toast';
 
 export default function HomePage() {
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+    } else {
+      searchInputRef.current?.focus();
+      toast.error('Please enter your search query');
+    }
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
 
   const filters = [
     { name: 'Region', type: 'text' },
@@ -42,13 +61,20 @@ export default function HomePage() {
       
       <div className={styles.searchSection}>
         <input
+          ref={searchInputRef}
           type="text"
           placeholder="Search your interest or skills or ask using natural language"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
+          onKeyPress={handleKeyPress}
           className={styles.searchInput}
         />
-        <button className={styles.findButton}>Find</button>
+        <button 
+          className={styles.findButton}
+          onClick={handleSearch}
+        >
+          Find
+        </button>
       </div>
 
       <div className={styles.filtersSection}>

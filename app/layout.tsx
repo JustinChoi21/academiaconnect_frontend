@@ -5,6 +5,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase/config';
 import Sidebar from './components/Sidebar/Sidebar';
 import { Inter } from 'next/font/google';
+import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -37,6 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body>
+        <Toaster position="top-center" />
         <div style={{ display: 'flex' }}>
           {!isAuthPage && user && <Sidebar />}
           <main style={{ flex: 1, marginLeft: !isAuthPage && user ? '280px' : '0' }}>

@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import styles from './Search.module.css';
 import Image from 'next/image';
+import toast from 'react-hot-toast';
+import styles from './Search.module.css';
 
 interface Researcher {
   id: number;
@@ -64,11 +65,32 @@ export default function SearchPage() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const toggleProfile = (id: number) => {
-    setSelectedProfiles(prev => 
-      prev.includes(id) 
-        ? prev.filter(profileId => profileId !== id)
-        : [...prev, id]
-    );
+    setSelectedProfiles(prev => {
+      if (prev.includes(id)) {
+        return prev.filter(profileId => profileId !== id);
+      }
+      if (prev.length < 2) {
+        return [...prev, id];
+      }
+      toast.dismiss();
+      toast.error('Please select only 2 profiles for comparison', {
+        id: 'profile-limit',
+        duration: 2000,
+        position: 'top-center',
+        style: {
+          background: '#333',
+          color: '#fff',
+          borderRadius: '8px',
+        },
+      });
+      return prev;
+    });
+  };
+
+  const handleCompare = () => {
+    if (selectedProfiles.length === 2) {
+      router.push('/comparison');
+    }
   };
 
   return (
@@ -84,7 +106,8 @@ export default function SearchPage() {
         <button className={styles.findButton}>Find</button>
         <button 
           className={styles.compareButton}
-          disabled={selectedProfiles.length === 0}
+          disabled={selectedProfiles.length !== 2}
+          onClick={handleCompare}
         >
           Compare {selectedProfiles.length > 0 ? `(${selectedProfiles.length})` : ''}
         </button>
