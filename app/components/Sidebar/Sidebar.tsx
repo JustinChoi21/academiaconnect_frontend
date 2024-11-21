@@ -1,8 +1,8 @@
 'use client';
+
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { auth } from '@/app/firebase/config';
-import { signOut } from 'firebase/auth';
+import { supabase } from '@/app/lib/supabase';
 import styles from './Sidebar.module.css';
 
 export default function Sidebar() {
@@ -23,21 +23,22 @@ export default function Sidebar() {
     {
       icon: '💬',
       label: 'Communication',
-      path: '/chat',
+      path: '/chat'
     },
     {
       icon: '👤',
-      label: 'My Profile',
+      label: 'Profile',
       path: '/profile',
     },
   ];
 
   const handleSignOut = async () => {
     try {
-      await signOut(auth);
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
       router.push('/login');
     } catch (error) {
-      console.error('Error occurred during sign out:', error);
+      console.error('Error signing out:', error);
     }
   };
 
@@ -83,7 +84,7 @@ export default function Sidebar() {
             </button>
           ) : (
             <Link 
-              href={item.path!} 
+              href={item.path} 
               key={index}
               className={`${styles.menuItem} ${pathname === item.path ? styles.active : ''}`}
             >

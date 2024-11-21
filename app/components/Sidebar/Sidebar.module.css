@@ -30,16 +30,6 @@
   background-color: #e5e5e5;
 }
 
-.menuItemButton {
-  width: 100%;
-  border: none;
-  background: none;
-  cursor: pointer;
-  text-align: left;
-  font-size: inherit;
-  font-family: inherit;
-}
-
 .active {
   background-color: #fff;
   font-weight: 500;
@@ -56,9 +46,26 @@
   flex: 1;
 }
 
+.badge {
+  background-color: #333;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
+
 .bottomMenu {
   border-top: 1px solid #ddd;
   padding-top: 1rem;
-  padding-bottom: 1rem;
+}
+
+.menuItemButton {
+  width: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: inherit;
+  font-family: inherit;
 }
  

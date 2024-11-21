@@ -1,12 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase/config';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import styled from '@emotion/styled';
+import { supabase } from '../lib/supabase';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -19,15 +18,23 @@ export default function LoginPage() {
     setError('');
     
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      console.log('Logged in user:', userCredential.user);
-      router.push('/home');
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (error) throw error;
+
+      if (data.user) {
+        console.log('Logged in user:', data.user);
+        router.push('/home');
+      }
     } catch (error: any) {
       console.error('Login error:', error);
       setError(
-        error.code === 'auth/invalid-credential'
-          ? 'Invalid email or password.'
-          : 'An error occurred during login.'
+        error.message === 'Invalid login credentials'
+          ? '이메일 또는 비밀번호가 올바르지 않습니다.'
+          : '로그인 중 오류가 발생했습니다.'
       );
     }
   };

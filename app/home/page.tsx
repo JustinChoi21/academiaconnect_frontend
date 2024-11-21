@@ -1,9 +1,10 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import styles from './home.module.css';
 import toast from 'react-hot-toast';
+import { supabase } from '../lib/supabase';
 
 interface FilterValue {
   text: string;
@@ -14,7 +15,7 @@ interface FilterState {
   [key: string]: FilterValue;
 }
 
-export default function HomePage() {
+export default function Home() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -169,99 +170,112 @@ export default function HomePage() {
     }
   ];
 
-  return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Discover Your Perfect Match</h1>
-      
-      <div className={styles.searchSection}>
-        <input
-          ref={searchInputRef}
-          type="text"
-          placeholder="Search your interest or skills or ask using natural language"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          onKeyPress={handleKeyPress}
-          className={styles.searchInput}
-        />
-        <button 
-          className={styles.findButton}
-          onClick={handleSearch}
-        >
-          Find
-        </button>
-      </div>
+  useEffect(() => {
+    const checkAuth = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        router.push('/login');
+      }
+    };
 
-      <div className={styles.filtersSection}>
-        <div className={styles.filterHeader}>
-          <h2>Filters</h2>
+    checkAuth();
+  }, [router]);
+
+  return (
+    <div className="mainContent">
+      <div className={styles.container}>
+        <h1 className={styles.title}>Discover Your Perfect Match</h1>
+        
+        <div className={styles.searchSection}>
+          <input
+            ref={searchInputRef}
+            type="text"
+            placeholder="Search your interest or skills or ask using natural language"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyPress={handleKeyPress}
+            className={styles.searchInput}
+          />
           <button 
-            className={`${styles.expandButton} ${!isExpanded ? styles.collapsed : ''}`}
-            onClick={() => setIsExpanded(!isExpanded)}
+            className={styles.findButton}
+            onClick={handleSearch}
           >
-            {isExpanded ? 'Collapse' : 'Expand'}
+            Find
           </button>
         </div>
-        
-        <div className={`${styles.filtersGrid} ${!isExpanded ? styles.collapsed : ''}`}>
-          {isExpanded && filters.map((filter, index) => (
-            <div key={index} className={styles.filterItem}>
-              <div className={styles.filterLabel}>
-                <span>{filter.name}</span>
-                <button 
-                  className={styles.clearButton}
-                  onClick={() => handleClear(filter.name)}
-                  style={{ 
-                    opacity: filterValues[filter.name][filter.type] ? 1 : 0.5,
-                    cursor: filterValues[filter.name][filter.type] ? 'pointer' : 'default'
-                  }}
-                >
-                  Clear
-                </button>
-              </div>
-              {filter.type === 'text' ? (
-                <div className={styles.searchInputWrapper}>
-                  <input 
-                    type="text" 
-                    placeholder="Keyword" 
-                    className={styles.filterInput}
-                    value={filterValues[filter.name].text}
-                    onChange={(e) => handleFilterChange(filter.name, e.target.value, 'text')}
-                  />
-                </div>
-              ) : (
-                <select 
-                  className={styles.filterSelect}
-                  value={filterValues[filter.name].select}
-                  onChange={(e) => handleFilterChange(filter.name, e.target.value, 'select')}
-                >
-                  <option value="">Select</option>
-                  {filter.options?.map((option, optionIndex) => (
-                    <option key={optionIndex} value={option}>
-                      {option}
-                    </option>
-                  ))}
-                </select>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
 
-      <div className={styles.suggestedSection}>
-        <h2>Suggested Contents</h2>
-        <div className={styles.suggestedGrid}>
-          {suggestedContents.map((content, index) => (
-            <div key={index} className={styles.contentCard}>
-              <Image
-                src={content.image}
-                alt={content.title}
-                width={300}
-                height={200}
-                className={styles.contentImage}
-              />
-              <h3 className={styles.contentTitle}>{content.title}</h3>
-            </div>
-          ))}
+        <div className={styles.filtersSection}>
+          <div className={styles.filterHeader}>
+            <h2>Filters</h2>
+            <button 
+              className={`${styles.expandButton} ${!isExpanded ? styles.collapsed : ''}`}
+              onClick={() => setIsExpanded(!isExpanded)}
+            >
+              {isExpanded ? 'Collapse' : 'Expand'}
+            </button>
+          </div>
+          
+          <div className={`${styles.filtersGrid} ${!isExpanded ? styles.collapsed : ''}`}>
+            {isExpanded && filters.map((filter, index) => (
+              <div key={index} className={styles.filterItem}>
+                <div className={styles.filterLabel}>
+                  <span>{filter.name}</span>
+                  <button 
+                    className={styles.clearButton}
+                    onClick={() => handleClear(filter.name)}
+                    style={{ 
+                      opacity: filterValues[filter.name][filter.type] ? 1 : 0.5,
+                      cursor: filterValues[filter.name][filter.type] ? 'pointer' : 'default'
+                    }}
+                  >
+                    Clear
+                  </button>
+                </div>
+                {filter.type === 'text' ? (
+                  <div className={styles.searchInputWrapper}>
+                    <input 
+                      type="text" 
+                      placeholder="Keyword" 
+                      className={styles.filterInput}
+                      value={filterValues[filter.name].text}
+                      onChange={(e) => handleFilterChange(filter.name, e.target.value, 'text')}
+                    />
+                  </div>
+                ) : (
+                  <select 
+                    className={styles.filterSelect}
+                    value={filterValues[filter.name].select}
+                    onChange={(e) => handleFilterChange(filter.name, e.target.value, 'select')}
+                  >
+                    <option value="">Select</option>
+                    {filter.options?.map((option, optionIndex) => (
+                      <option key={optionIndex} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.suggestedSection}>
+          <h2>Suggested Contents</h2>
+          <div className={styles.suggestedGrid}>
+            {suggestedContents.map((content, index) => (
+              <div key={index} className={styles.contentCard}>
+                <Image
+                  src={content.image}
+                  alt={content.title}
+                  width={300}
+                  height={200}
+                  className={styles.contentImage}
+                />
+                <h3 className={styles.contentTitle}>{content.title}</h3>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
