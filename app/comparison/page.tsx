@@ -37,108 +37,48 @@ const researcher2: ResearcherComparison = {
   image: "/implement/search_result/profile2.png"
 };
 
-export default function ComparisonPage() {
-  const router = useRouter();
-
+export default function Comparison() {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Comparison</h1>
-      
-      <div className={styles.comparisonGrid}>
-        <div className={styles.researcherColumn}>
-          <div className={styles.profileHeader}>
+    <div className="mainContent">
+      <div className={styles.comparisonContainer}>
+        <h1>Comparison</h1>
+        
+        <div className={styles.profilesGrid}>
+          <div className={styles.profileCard}>
             <Image
-              src={researcher1.image}
-              alt={researcher1.name}
+              src="/implement/search_result/profile1.png"
+              alt="Dr. Emily Johnson"
               width={100}
               height={100}
               className={styles.profileImage}
             />
-            <div>
-              <h2>{researcher1.name}</h2>
-              <p>{researcher1.university}</p>
+            <h2>Dr. Emily Johnson</h2>
+            <p className={styles.university}>ABC University</p>
+            
+            <div className={styles.infoSection}>
+              <h3>Research Interests</h3>
+              <p>Machine Learning, Deep Learning, Bio Chemistry</p>
+              {/* 나머지 내용... */}
             </div>
           </div>
 
-          <div className={styles.infoSection}>
-            <h3>Research Interests</h3>
-            <p>{researcher1.researchInterests}</p>
-          </div>
-
-          <div className={styles.infoSection}>
-            <h3>Research Type</h3>
-            <p>{researcher1.researchType}</p>
-          </div>
-
-          <div className={styles.infoSection}>
-            <h3>Publications</h3>
-            <p>{researcher1.publications}</p>
-          </div>
-
-          <div className={styles.infoSection}>
-            <h3>Projects</h3>
-            <p>{researcher1.projects}</p>
-          </div>
-
-          <div className={styles.infoSection}>
-            <h3>Technologies</h3>
-            <p>{researcher1.technologies}</p>
-          </div>
-
-          <button 
-            className={styles.viewProfileButton}
-            onClick={() => router.push('/detailed_profile')}
-          >
-            View Profile
-          </button>
-        </div>
-
-        <div className={styles.researcherColumn}>
-          <div className={styles.profileHeader}>
+          <div className={styles.profileCard}>
             <Image
-              src={researcher2.image}
-              alt={researcher2.name}
+              src="/implement/search_result/profile2.png"
+              alt="Dr. Michael Thompson"
               width={100}
               height={100}
               className={styles.profileImage}
             />
-            <div>
-              <h2>{researcher2.name}</h2>
-              <p>{researcher2.university}</p>
+            <h2>Dr. Michael Thompson</h2>
+            <p className={styles.university}>MMN University</p>
+            
+            <div className={styles.infoSection}>
+              <h3>Research Interests</h3>
+              <p>Black Hole Physics, Interstellar Medium, Gravitational</p>
+              {/* 나머지 내용... */}
             </div>
           </div>
-
-          <div className={styles.infoSection}>
-            <h3>Research Interests</h3>
-            <p>{researcher2.researchInterests}</p>
-          </div>
-
-          <div className={styles.infoSection}>
-            <h3>Research Type</h3>
-            <p>{researcher2.researchType}</p>
-          </div>
-
-          <div className={styles.infoSection}>
-            <h3>Publications</h3>
-            <p>{researcher2.publications}</p>
-          </div>
-
-          <div className={styles.infoSection}>
-            <h3>Projects</h3>
-            <p>{researcher2.projects}</p>
-          </div>
-
-          <div className={styles.infoSection}>
-            <h3>Technologies</h3>
-            <p>{researcher2.technologies}</p>
-          </div>
-
-          <button 
-            className={styles.viewProfileButton}
-            onClick={() => router.push('/detailed_profile')}
-          >
-            View Profile
-          </button>
         </div>
       </div>
     </div>

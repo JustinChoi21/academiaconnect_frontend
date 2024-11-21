@@ -51,7 +51,7 @@ a {
 }
 
 .mainContent {
-  margin-left: 250px; /* 사이드바의 width와 동일 */
+  margin-left: 250px; /* Same width as sidebar */
   padding: 2rem;
   min-height: 100vh;
   background-color: #ffffff;

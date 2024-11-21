@@ -20,7 +20,7 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');
   const searchInputRef = useRef<HTMLInputElement>(null);
   
-  // 필터 상태 관리
+  // Filter state management
   const [filterValues, setFilterValues] = useState<FilterState>({
     Region: { text: '', select: '' },
     State: { text: '', select: '' },
@@ -117,7 +117,7 @@ export default function Home() {
 
   const [isExpanded, setIsExpanded] = useState(true);
 
-  // 필터 값 변경 핸들러
+  // Filter value change handler
   const handleFilterChange = (filterName: string, value: string, type: 'text' | 'select') => {
     setFilterValues(prev => ({
       ...prev,
@@ -128,7 +128,7 @@ export default function Home() {
     }));
   };
 
-  // 필터 초기화 핸들러
+  // Filter initialization handler
   const handleClear = (filterName: string) => {
     setFilterValues(prev => ({
       ...prev,
