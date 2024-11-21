@@ -209,8 +209,8 @@ export default function Search() {
                       className={styles.clearButton}
                       onClick={() => handleClear(filter.name)}
                       style={{ 
-                        opacity: filterValues[filter.name][filter.type] ? 1 : 0.5,
-                        cursor: filterValues[filter.name][filter.type] ? 'pointer' : 'default'
+                        opacity: filterValues[filter.name][filter.type as keyof FilterValue] ? 1 : 0.5,
+                        cursor: filterValues[filter.name][filter.type as keyof FilterValue] ? 'pointer' : 'default'
                       }}
                     >
                       Clear
