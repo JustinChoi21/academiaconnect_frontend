@@ -11,9 +11,14 @@ export default function Sidebar() {
 
   const menuItems = [
     { 
-      icon: '🔍',
+      icon: '🏠',
       label: 'Home',
       path: '/home',
+    },
+    {
+      icon: '🔍',
+      label: 'Search',
+      path: '/search',
     },
     {
       icon: '💬',
@@ -61,7 +66,7 @@ export default function Sidebar() {
           >
             <span className={styles.icon}>{item.icon}</span>
             <span className={styles.label}>{item.label}</span>
-            {item.badge && <span className={styles.badge}>{item.badge}</span>}
+            {/* {item.badge && <span className={styles.badge}>{item.badge}</span>} */}
           </Link>
         ))}
       </div>
