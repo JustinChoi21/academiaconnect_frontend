@@ -1,81 +1,40 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
 import styles from './Search.module.css';
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 
 interface Researcher {
-  id: number;
-  name: string;
+  id: string;
+  first_name: string;
+  last_name: string;
   university: string;
-  description: string;
-  image: string;
+  brief_description: string;
+  profile_image_url: string;
 }
 
-const researchers: Researcher[] = [
-  {
-    id: 1,
-    name: "Dr. Emily Johnson",
-    university: "ABC University",
-    description: "Marine Biologist passionate about ocean conservation and biodiversity research.",
-    image: "/implement/search_result/profile1.png"
-  },
-  {
-    id: 2,
-    name: "Dr. Michael Thompson",
-    university: "MMN University",
-    description: "Astrophysicist specializing in black hole physics and interstellar phenomena.",
-    image: "/implement/search_result/profile2.png"
-  },
-  {
-    id: 3,
-    name: "Dr. Sarah Johnson",
-    university: "SOS University",
-    description: "Renowned biologist with expertise in marine ecosystems.",
-    image: "/implement/search_result/profile3.png"
-  },
-  {
-    id: 4,
-    name: "Dr. Laura Patel",
-    university: "LQL University",
-    description: "Marine ecologist with a focus on coral reef ecosystems and climate resilience",
-    image: "/implement/search_result/profile4.png"
-  },
-  {
-    id: 5,
-    name: "Dr. Robert Chang",
-    university: "KQR University",
-    description: "Physicist specializing in quantum computing for secure communication.",
-    image: "/implement/search_result/profile5.png"
-  },
-  {
-    id: 6,
-    name: "Dr. Maria Torres",
-    university: "XYZ University",
-    description: "Plant biologist dedicated to sustainable agriculture and genetic crop.",
-    image: "/implement/search_result/profile6.png"
-  }
-];
-
-interface FilterValue {
-  text: string;
-  select: string;
-}
-
-interface FilterState {
-  [key: string]: FilterValue;
-}
+const DEFAULT_AVATAR = 'implement/search_result/Placeholder Image.png';
 
 export default function Search() {
+  const supabase = createClientComponentClient();
   const router = useRouter();
-  const [selectedProfiles, setSelectedProfiles] = useState<number[]>([]);
+  const [researchers, setResearchers] = useState<Researcher[]>([]);
+  const [selectedProfiles, setSelectedProfiles] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [isFiltersVisible, setIsFiltersVisible] = useState(false);
   const [isExpanded, setIsExpanded] = useState(true);
+  
+  // Filter state management
+  interface FilterState {
+    [key: string]: {
+      text: string;
+      select: string;
+    }
+  }
 
-  // 필터 상태 관리
   const [filterValues, setFilterValues] = useState<FilterState>({
     Region: { text: '', select: '' },
     State: { text: '', select: '' },
@@ -131,7 +90,7 @@ export default function Search() {
     }));
   };
 
-  const toggleProfile = (id: number) => {
+  const toggleProfile = (id: string) => {
     setSelectedProfiles(prev => {
       if (prev.includes(id)) {
         return prev.filter(profileId => profileId !== id);
@@ -139,17 +98,7 @@ export default function Search() {
       if (prev.length < 2) {
         return [...prev, id];
       }
-      toast.dismiss();
-      toast.error('Please select only 2 profiles for comparison', {
-        id: 'profile-limit',
-        duration: 2000,
-        position: 'top-center',
-        style: {
-          background: '#333',
-          color: '#fff',
-          borderRadius: '8px',
-        },
-      });
+      toast.error('Please select only 2 profiles for comparison');
       return prev;
     });
   };
@@ -159,6 +108,34 @@ export default function Search() {
       router.push('/comparison');
     }
   };
+
+  // Add useEffect to fetch researchers
+  useEffect(() => {
+    async function fetchResearchers() {
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('user_id, first_name, last_name, university, brief_description, profile_image_url');
+      
+      if (error) {
+        console.error('Error fetching researchers:', error);
+        return;
+      }
+
+      if (data) {
+        const formattedData = data.map(profile => ({
+          id: profile.user_id,
+          first_name: profile.first_name,
+          last_name: profile.last_name,
+          university: profile.university,
+          brief_description: profile.brief_description,
+          profile_image_url: profile.profile_image_url,
+        }));
+        setResearchers(formattedData);
+      }
+    }
+
+    fetchResearchers();
+  }, [supabase]);
 
   return (
     <div className="mainContent">
@@ -209,8 +186,8 @@ export default function Search() {
                       className={styles.clearButton}
                       onClick={() => handleClear(filter.name)}
                       style={{ 
-                        opacity: filterValues[filter.name][filter.type as keyof FilterValue] ? 1 : 0.5,
-                        cursor: filterValues[filter.name][filter.type as keyof FilterValue] ? 'pointer' : 'default'
+                        opacity: filterValues[filter.name][filter.type as keyof typeof filterValues[typeof filter.name]] ? 1 : 0.5,
+                        cursor: filterValues[filter.name][filter.type as keyof typeof filterValues[typeof filter.name]] ? 'pointer' : 'default'
                       }}
                     >
                       Clear
@@ -255,18 +232,22 @@ export default function Search() {
                 />
               </div>
               <Image
-                src={researcher.image}
-                alt={researcher.name}
+                src={researcher.profile_image_url || DEFAULT_AVATAR}
+                alt={`${researcher.first_name} ${researcher.last_name}`}
                 width={100}
                 height={100}
                 className={styles.profileImage}
+                onError={(e) => {
+                  const img = e.target as HTMLImageElement;
+                  img.src = DEFAULT_AVATAR;
+                }}
               />
-              <h3>{researcher.name}</h3>
+              <h3>{researcher.first_name} {researcher.last_name}</h3>
               <p className={styles.university}>{researcher.university}</p>
-              <p className={styles.description}>{researcher.description}</p>
+              <p className={styles.description}>{researcher.brief_description}</p>
               <button 
                 className={styles.viewProfileButton}
-                onClick={() => router.push('/detailed_profile')}
+                onClick={() => router.push(`/detailed_profile/${researcher.id}`)}
               >
                 View Profile
               </button>
