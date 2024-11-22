@@ -25,7 +25,7 @@ interface ProfileData {
   connections_count: number
 }
 
-const DEFAULT_AVATAR = '/path/to/default/avatar.png'
+const DEFAULT_AVATAR = '/implement/detailed_profile/Placeholder Image.png'
 
 export default function DetailedProfile() {
   const { id } = useParams()
@@ -60,16 +60,33 @@ export default function DetailedProfile() {
   if (!profile) return <div className={styles.error}>Profile not found</div>
 
   return (
-    <div className={styles.container}>
+    <div className={`mainContent ${styles.container}`}>
       <div className={styles.profileHeader}>
         <div className={styles.profileInfo}>
-          <Image 
-            src={profile.profile_image_url || DEFAULT_AVATAR}
-            alt={`${profile.first_name} ${profile.last_name}`}
-            width={120}
-            height={120}
-            className={styles.profileImage}
-          />
+          {profile.profile_image_url ? (
+            <Image
+              src={profile.profile_image_url}
+              alt={`${profile.first_name} ${profile.last_name}`}
+              width={120}
+              height={120}
+              className={styles.profileImage}
+              onError={(e) => {
+                const imgElement = e.target as HTMLImageElement;
+                if (imgElement) {
+                  imgElement.onerror = null;
+                  imgElement.src = DEFAULT_AVATAR;
+                }
+              }}
+            />
+          ) : (
+            <Image
+              src={DEFAULT_AVATAR}
+              alt="Default profile"
+              width={120}
+              height={120}
+              className={styles.profileImage}
+            />
+          )}
           <div className={styles.nameSection}>
             <h1>Dr. {profile.first_name} {profile.last_name}</h1>
             <p className={styles.username}>@{profile.username}</p>
