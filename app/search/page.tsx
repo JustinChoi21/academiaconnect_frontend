@@ -109,6 +109,10 @@ export default function Search() {
     }
   };
 
+  const handleViewProfile = (id: string) => {
+    router.push(`/profile/${id}`);
+  };
+
   // Add useEffect to fetch researchers
   useEffect(() => {
     async function fetchResearchers() {
@@ -249,7 +253,7 @@ export default function Search() {
               <p className={styles.description}>{researcher.brief_description}</p>
               <button 
                 className={styles.viewProfileButton}
-                onClick={() => router.push(`/detailed_profile/${researcher.id}`)}
+                onClick={() => handleViewProfile(researcher.id)}
               >
                 View Profile
               </button>

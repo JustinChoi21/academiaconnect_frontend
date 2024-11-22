@@ -1,0 +1,126 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.profileInfo {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.profileImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nameSection h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #000;
+}
+
+.username {
+  font-size: 16px;
+  color: #666;
+  margin: 0 0 4px 0;
+}
+
+.connections {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 16px;
+}
+
+.connectButton, .chatButton {
+  padding: 10px 32px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.connectButton {
+  background: #fff;
+  border: 1px solid #000;
+  color: #000;
+}
+
+.chatButton {
+  background: #fff;
+  border: 1px solid #000;
+  color: #000;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mainContent section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mainContent h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  color: #000;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.infoCard {
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
+  padding: 20px;
+  background: #fff;
+}
+
+.infoCard h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: #000;
+}
+
+.infoCard p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+  margin: 0;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
+}
+
+.error {
+  color: #dc3545;
+} 
