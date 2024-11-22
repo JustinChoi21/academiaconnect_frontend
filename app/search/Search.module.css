@@ -67,6 +67,12 @@
   margin-bottom: 15px;
 }
 
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .university {
   color: #666;
   margin: 5px 0;

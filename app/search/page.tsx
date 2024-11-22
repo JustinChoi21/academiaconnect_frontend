@@ -231,17 +231,19 @@ export default function Search() {
                   onChange={() => toggleProfile(researcher.id)}
                 />
               </div>
-              <Image
-                src={researcher.profile_image_url || DEFAULT_AVATAR}
-                alt={`${researcher.first_name} ${researcher.last_name}`}
-                width={100}
-                height={100}
-                className={styles.profileImage}
-                onError={(e) => {
-                  const img = e.target as HTMLImageElement;
-                  img.src = DEFAULT_AVATAR;
-                }}
-              />
+              <div className={styles.imageContainer}>
+                <Image
+                  src={researcher.profile_image_url || DEFAULT_AVATAR}
+                  alt={`${researcher.first_name} ${researcher.last_name}`}
+                  width={100}
+                  height={100}
+                  className={styles.profileImage}
+                  onError={(e) => {
+                    const img = e.target as HTMLImageElement;
+                    img.src = DEFAULT_AVATAR;
+                  }}
+                />
+              </div>
               <h3>{researcher.first_name} {researcher.last_name}</h3>
               <p className={styles.university}>{researcher.university}</p>
               <p className={styles.description}>{researcher.brief_description}</p>
