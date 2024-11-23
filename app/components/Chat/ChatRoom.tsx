@@ -110,7 +110,10 @@ export default function ChatRoom({ selectedChatId, selectedChat }: ChatRoomProps
           <span className={styles.code}>{selectedChat?.code}</span>
         </div>
         <div className={styles.actions}>
-          <button className={styles.iconButton}>ℹ️</button>
+          <button 
+            className={styles.iconButton}
+            onClick={() => alert('This chat feature is created with mock data.')}
+          >ℹ️</button>
         </div>
       </div>
       
