@@ -152,7 +152,12 @@ export default function Search() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <button className={styles.findButton}>Find</button>
+          <button 
+            className={styles.findButton}
+            onClick={() => toast.success('This site is using mock data for demonstration purposes')}
+          >
+            Find
+          </button>
           <button 
             className={styles.compareButton}
             disabled={selectedProfiles.length !== 2}
