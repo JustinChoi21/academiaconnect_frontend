@@ -264,7 +264,12 @@ export default function Home() {
           <h2>Suggested Contents</h2>
           <div className={styles.suggestedGrid}>
             {suggestedContents.map((content, index) => (
-              <div key={index} className={styles.contentCard}>
+              <div 
+                key={index} 
+                className={styles.contentCard}
+                onClick={() => toast.success('This is mock content for demonstration purposes only.')}
+                style={{ cursor: 'pointer' }}
+              >
                 <Image
                   src={content.image}
                   alt={content.title}
