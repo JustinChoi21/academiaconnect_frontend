@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import styles from './Profile.module.css';
 import { supabase } from '../lib/supabase';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Profile() {
   // role의 초기값을 null로 설정하여 실제 데이터가 로드되기 전까지는 미선택 상태로 유지
@@ -153,6 +154,58 @@ export default function Profile() {
     console.log(profileData);
   };
 
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    try {
+      if (!e.target.files || e.target.files.length === 0) {
+        return;
+      }
+
+      const file = e.target.files[0];
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${uuidv4()}.${fileExt}`;
+      const filePath = `${fileName}`;
+
+      console.log("filePath", filePath);
+      console.log("file", file);
+
+      // Supabase storage에 파일 업로드
+      const { error: uploadError } = await supabase.storage
+        .from('profile-images')
+        .upload('profile-images/' + filePath, file);
+
+      console.log("uploadError", uploadError);
+      if (uploadError) throw uploadError;
+
+      // 업로드된 이미지의 공개 URL 가져오기
+      const { data: { publicUrl } } = supabase.storage
+        .from('profile-images')
+        .getPublicUrl('profile-images/' + filePath);
+
+      console.log("publicUrl", publicUrl);
+
+      // 프로필 데이터 업데이트
+      setProfileData({
+        ...profileData,
+        profileImageUrl: publicUrl
+      });
+
+      // 프로필 DB 업데이트
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) throw new Error('No user logged in');
+
+      const { error: updateError } = await supabase
+        .from('profiles')
+        .update({ profile_image_url: publicUrl })
+        .eq('user_id', user.id);
+
+      if (updateError) throw updateError;
+
+    } catch (error) {
+      console.error('Error uploading image:', error);
+      alert('Failed to upload image. Please try again.');
+    }
+  };
+
   return (
     <div className="mainContent">
       <div className={styles.profileContainer}>
@@ -164,7 +217,16 @@ export default function Profile() {
                 alt="Profile" 
               />
             </div>
-            <button className={styles.uploadButton}>Upload Photo</button>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleImageUpload}
+              style={{ display: 'none' }}
+              id="imageUpload"
+            />
+            <label htmlFor="imageUpload" className={styles.uploadButton}>
+              Upload Photo
+            </label>
           </div>
 
           <form onSubmit={handleSubmit} className={styles.form}>
