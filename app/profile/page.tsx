@@ -4,7 +4,8 @@ import styles from './Profile.module.css';
 import { supabase } from '../lib/supabase';
 
 export default function Profile() {
-  const [role, setRole] = useState('student');
+  // role의 초기값을 null로 설정하여 실제 데이터가 로드되기 전까지는 미선택 상태로 유지
+  const [role, setRole] = useState<string | null>(null);
   const [profileData, setProfileData] = useState({
     firstName: '',
     lastName: '',
@@ -20,6 +21,7 @@ export default function Profile() {
     availableMeetings: '',
     latestActivities: '',
     briefDescription: '',
+    profileImageUrl: '',
     communications: {
       email: false,
       realTimeChat: false,
@@ -59,6 +61,7 @@ export default function Profile() {
             awards: profile.awards || '',
             availableMeetings: profile.available_meetings || '',
             latestActivities: profile.latest_activities || '',
+            profileImageUrl: profile.profile_image_url || '',
             communications: {
               email: profile.preferred_communication?.includes('email') || false,
               realTimeChat: profile.preferred_communication?.includes('realTimeChat') || false,
@@ -66,10 +69,16 @@ export default function Profile() {
               zoom: profile.preferred_communication?.includes('zoom') || false
             }
           });
+          // role이 없는 경우에만 'student'를 기본값으로 설정
           setRole(profile.role || 'student');
+          console.log("role", profile.role);
+          console.log("profileData", profileData);
+          console.log("email", profileData.communications.email);
         }
       } catch (error) {
         console.error('Error fetching profile:', error);
+        // 에러 발생 시 기본값 'student' 설정
+        setRole('student');
       }
     };
 
@@ -150,7 +159,10 @@ export default function Profile() {
         <div className={styles.profileContent}>
           <div className={styles.photoSection}>
             <div className={styles.photoPlaceholder}>
-              <img src="/implement/setting_profile/Placeholder Image.png" alt="Profile" />
+              <img 
+                src={profileData.profileImageUrl || "/implement/setting_profile/Placeholder Image.png"} 
+                alt="Profile" 
+              />
             </div>
             <button className={styles.uploadButton}>Upload Photo</button>
           </div>
