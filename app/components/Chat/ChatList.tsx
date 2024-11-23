@@ -53,6 +53,10 @@ export default function ChatList({ onSelectChat }: ChatListProps) {
     }
   ];
 
+  const filteredChats = mockChats.filter((chat) =>
+    chat.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -64,11 +68,11 @@ export default function ChatList({ onSelectChat }: ChatListProps) {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button className={styles.chatButton}>CHAT +</button>
+          <button className={styles.chatButton}>Find</button>
         </div>
       </div>
       <div className={styles.chatList}>
-        {mockChats.map((chat) => (
+        {filteredChats.map((chat) => (
           <div 
             key={chat.id}
             className={styles.chatItem}
