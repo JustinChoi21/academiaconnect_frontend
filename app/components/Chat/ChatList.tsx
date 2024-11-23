@@ -12,14 +12,45 @@ export default function ChatList({ onSelectChat }: ChatListProps) {
 
   const mockChats = [
     {
-      id: '1',
-      name: 'Dr. Emily Johnson',
+      id: '1', 
+      name: 'Dr. Maria Torres',
+      status: 'Service',
+      time: '00:31:00',
+      code: '#CU6799H',
+      image: '/implement/chat/profile2.png'
+    },
+    {
+      id: '2',
+      name: 'Dr. Laura Patel',
       status: 'Wait',
       time: '00:31:00',
-      code: '#CU6798H',
-      image: '/avatars/doctor1.jpg'
+      code: '#CU6800H',
+      image: '/implement/chat/profile3.png'
     },
-    // Add more mock data as needed
+    {
+      id: '3',
+      name: 'Dr. Rudy Cars',
+      status: 'Service',
+      time: '00:31:00',
+      code: '#CU6801H',
+      image: '/implement/chat/profile4.png'
+    },
+    {
+      id: '4',
+      name: 'Dr. Sarah Johnson',
+      status: 'Wait',
+      time: '00:31:00',
+      code: '#CU6802H',
+      image: '/implement/chat/profile5.png'
+    },
+    {
+      id: '5',
+      name: 'Dr. Robert Chang',
+      status: 'Wait',
+      time: '00:31:00',
+      code: '#CU6803H',
+      image: '/implement/chat/profile6.png'
+    }
   ];
 
   return (
