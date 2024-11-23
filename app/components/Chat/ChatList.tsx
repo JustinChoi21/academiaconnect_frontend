@@ -4,7 +4,14 @@ import styles from './ChatList.module.css';
 import Image from 'next/image';
 
 interface ChatListProps {
-  onSelectChat: (chatId: string) => void;
+  onSelectChat: (chat: {
+    id: string;
+    name: string;
+    status: string;
+    time: string;
+    code: string;
+    image: string;
+  }) => void;
 }
 
 export default function ChatList({ onSelectChat }: ChatListProps) {
@@ -76,7 +83,7 @@ export default function ChatList({ onSelectChat }: ChatListProps) {
           <div 
             key={chat.id}
             className={styles.chatItem}
-            onClick={() => onSelectChat(chat.id)}
+            onClick={() => onSelectChat(chat)}
           >
             <Image
               src={chat.image}
