@@ -1,13 +1,16 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './Profile.module.css';
+import { supabase } from '../lib/supabase';
 
 export default function Profile() {
-  const [userType, setUserType] = useState('student');
+  const [role, setRole] = useState('student');
   const [profileData, setProfileData] = useState({
     firstName: '',
     lastName: '',
     email: '',
+    username: '',
+    university: '',
     researchInterests: '',
     expertise: '',
     ongoingProjects: '',
@@ -16,6 +19,7 @@ export default function Profile() {
     awards: '',
     availableMeetings: '',
     latestActivities: '',
+    briefDescription: '',
     communications: {
       email: false,
       realTimeChat: false,
@@ -24,9 +28,119 @@ export default function Profile() {
     }
   });
 
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const { data: { user } } = await supabase.auth.getUser();
+        
+        if (!user) {
+          throw new Error('No user logged in');
+        }
+
+        const { data: profile, error } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('user_id', user.id)
+          .single();
+
+        if (error) throw error;
+
+        if (profile) {
+          setProfileData({
+            ...profileData,
+            firstName: profile.first_name || '',
+            lastName: profile.last_name || '',
+            email: profile.email || '',
+            researchInterests: profile.research_interests || '',
+            expertise: profile.expertise || '',
+            ongoingProjects: profile.ongoing_projects || '',
+            previousProjects: profile.previous_projects || '',
+            publications: profile.publications || '',
+            awards: profile.awards || '',
+            availableMeetings: profile.available_meetings || '',
+            latestActivities: profile.latest_activities || '',
+            communications: {
+              email: profile.preferred_communication?.includes('email') || false,
+              realTimeChat: profile.preferred_communication?.includes('realTimeChat') || false,
+              directMessaging: profile.preferred_communication?.includes('directMessaging') || false,
+              zoom: profile.preferred_communication?.includes('zoom') || false
+            }
+          });
+          setRole(profile.role || 'student');
+        }
+      } catch (error) {
+        console.error('Error fetching profile:', error);
+      }
+    };
+
+    fetchProfile();
+  }, []);
+
+  // 프로필 저장 함수
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement profile update logic
+    
+    const updateProfile = async () => {
+      try {
+        const { data: { user } } = await supabase.auth.getUser();
+        
+        if (!user) {
+          throw new Error('No user logged in');
+        }
+
+        const { data: existingProfile, error: fetchError } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('user_id', user.id)
+          .single();
+
+        if (fetchError && fetchError.code !== 'PGRST116') {
+          throw fetchError;
+        }
+
+        const profilePayload = {
+          user_id: user.id,
+          first_name: profileData.firstName,
+          last_name: profileData.lastName,
+          email: profileData.email,
+          role: role,
+          research_interests: profileData.researchInterests,
+          expertise: profileData.expertise,
+          ongoing_projects: profileData.ongoingProjects,
+          previous_projects: profileData.previousProjects,
+          publications: profileData.publications,
+          awards: profileData.awards,
+          available_meetings: profileData.availableMeetings,
+          latest_activities: profileData.latestActivities,
+          preferred_communication: Object.entries(profileData.communications)
+            .filter(([_, enabled]) => enabled)
+            .map(([method]) => method)
+        };
+
+        if (existingProfile) {
+          const { error: updateError } = await supabase
+            .from('profiles')
+            .update(profilePayload)
+            .eq('user_id', user.id);
+
+          if (updateError) throw updateError;
+        } else {
+          const { error: insertError } = await supabase
+            .from('profiles')
+            .insert([profilePayload]);
+
+          if (insertError) throw insertError;
+        }
+
+        alert('Profile saved successfully!');
+      } catch (error) {
+        console.error('Error saving profile:', error);
+        alert('Failed to save profile. Please try again.');
+      }
+    };
+
+    updateProfile();
+
     console.log(profileData);
   };
 
@@ -49,8 +163,8 @@ export default function Profile() {
                   type="radio"
                   name="userType"
                   value="student"
-                  checked={userType === 'student'}
-                  onChange={(e) => setUserType(e.target.value)}
+                  checked={role === 'student'}
+                  onChange={(e) => setRole(e.target.value)}
                 />
                 Student
               </label>
@@ -59,8 +173,8 @@ export default function Profile() {
                   type="radio"
                   name="userType"
                   value="professor"
-                  checked={userType === 'professor'}
-                  onChange={(e) => setUserType(e.target.value)}
+                  checked={role === 'professor'}
+                  onChange={(e) => setRole(e.target.value)}
                 />
                 Professor
               </label>
