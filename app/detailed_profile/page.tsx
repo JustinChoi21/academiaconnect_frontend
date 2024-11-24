@@ -61,7 +61,6 @@ const researcherProfile: ResearcherProfile = {
 };
 
 export default function DetailedProfile() {
-  const router = useRouter();
 
   return (
     <div className="mainContent">

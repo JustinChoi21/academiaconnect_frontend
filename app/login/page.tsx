@@ -29,10 +29,11 @@ export default function LoginPage() {
         console.log('Logged in user:', data.user);
         router.push('/home');
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Login error:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
       setError(
-        error.message === 'Invalid login credentials'
+        errorMessage === 'Invalid login credentials'
           ? '이메일 또는 비밀번호가 올바르지 않습니다.'
           : '로그인 중 오류가 발생했습니다.'
       );

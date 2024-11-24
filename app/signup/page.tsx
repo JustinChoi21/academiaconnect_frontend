@@ -60,10 +60,10 @@ export default function SignUpPage() {
           throw error;
         }
       }
-    } catch (error: any) {
+    } catch (error: Error | unknown) {
       console.error('Signup error:', error);
       setError(
-        error.message === 'User already registered'
+        (error as Error).message === 'User already registered'
           ? '이미 등록된 이메일입니다.'
           : '회원가입 중 오류가 발생했습니다.'
       );
