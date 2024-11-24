@@ -123,6 +123,7 @@ export default function Profile() {
           available_meetings: profileData.availableMeetings,
           latest_activities: profileData.latestActivities,
           preferred_communication: Object.entries(profileData.communications)
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
             .filter(([_, enabled]) => enabled)
             .map(([method]) => method)
         };
