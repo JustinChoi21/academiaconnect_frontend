@@ -123,7 +123,7 @@ export default function Profile() {
           available_meetings: profileData.availableMeetings,
           latest_activities: profileData.latestActivities,
           preferred_communication: Object.entries(profileData.communications)
-            .filter(([key, enabled]) => enabled)
+            .filter(([_, enabled]) => enabled)
             .map(([method]) => method)
         };
 

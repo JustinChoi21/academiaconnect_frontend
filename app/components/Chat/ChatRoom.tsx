@@ -3,6 +3,15 @@ import { useState, useEffect } from 'react';
 import styles from './ChatRoom.module.css';
 import Image from 'next/image';
 
+interface ChatMessage {
+  id: string;
+  text: string;
+  sender: 'me' | 'other';
+  time: string;
+  image?: string;
+  fileName?: string;
+}
+
 interface ChatRoomProps {
   selectedChatId: string | null;
   selectedChat?: {
@@ -26,7 +35,7 @@ export default function ChatRoom({ selectedChatId, selectedChat }: ChatRoomProps
   };
 
   const [message, setMessage] = useState('');
-  const [chatMessages, setChatMessages] = useState<Record<string, any[]>>({});
+  const [chatMessages, setChatMessages] = useState<Record<string, ChatMessage[]>>({});
 
   useEffect(() => {
     if (selectedChatId && !chatMessages[selectedChatId]) {

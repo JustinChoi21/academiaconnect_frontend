@@ -46,7 +46,7 @@ export default function SignUpPage() {
             console.error('Profile creation error:', profileError);
           }
 
-          const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
+          const { error: signInError } = await supabase.auth.signInWithPassword({
             email,
             password,
           });
