@@ -62,7 +62,15 @@ export default function LoginPage() {
             <InputGroup>
               <PasswordHeader>
                 <label htmlFor="password">Password*</label>
-                <Link href="/forgot-password">Forgot your password?</Link>
+                <Link 
+                  href="#" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    alert('This is a mock website. Password recovery is not implemented.');
+                  }}
+                >
+                  Forgot your password?
+                </Link>
               </PasswordHeader>
               <input
                 type="password"
