@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import Image from 'next/image'
 import styles from './Profile.module.css'
@@ -29,6 +29,7 @@ const DEFAULT_AVATAR = '/implement/detailed_profile/Placeholder Image.png'
 
 export default function DetailedProfile() {
   const { id } = useParams()
+  const router = useRouter()
   const [profile, setProfile] = useState<ProfileData | null>(null)
   const [loading, setLoading] = useState(true)
   const supabase = createClientComponentClient()
@@ -94,8 +95,18 @@ export default function DetailedProfile() {
           </div>
         </div>
         <div className={styles.actionButtons}>
-          <button className={styles.connectButton}>Connect</button>
-          <button className={styles.chatButton}>Chat</button>
+          <button 
+            className={styles.connectButton}
+            onClick={() => alert('This is a mock profile. Connection feature is not available in the demo version.')}
+          >
+            Connect
+          </button>
+          <button 
+            className={styles.chatButton}
+            onClick={() => router.push(`/chat?userId=${id}`)}
+          >
+            Chat
+          </button>
         </div>
       </div>
 
