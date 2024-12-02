@@ -5,24 +5,25 @@ const FinalImplement = () => (
     <h1 style={styles.heading1}>Final Implementation</h1>
     
     {/* Implementation Links Section */}
-    <h2 style={styles.heading2}>Implementation Links</h2>
+    <h2 style={styles.heading2}>1. Implementation Links</h2>
     <div style={styles.linkContainer}>
-      <a href="https://github.com/your-repo-link" style={styles.link}>
+      <a href="https://github.com/JustinChoi21/academiaconnect_frontend.git" style={styles.link}>
         View Source Code on GitHub
       </a>
     </div>
 
     {/* Instructions Section */}
-    <h2 style={styles.heading2}>Running Instructions</h2>
+    <h2 style={styles.heading2}>2. Running Instructions</h2>
     <ol style={styles.list}>
-      <li>Clone the repository: <code>git clone https://github.com/your-repo-link</code></li>
-      <li>Install dependencies: <code>npm install</code></li>
-      <li>Start the development server: <code>npm run dev</code></li>
-      <li>Open your browser and navigate to: <code>http://localhost:3000</code></li>
+      <li>1) Clone the repository: <code>git clone https://github.com/JustinChoi21/academiaconnect_frontend.git</code></li>
+      <li>2) Install dependencies: <code>npm install</code></li>
+      <li>3) Start the development server: <code>npm run dev</code></li>
+      <li>4) Open your browser and navigate to: <code>http://localhost:3000</code></li>
+      <li>5) Click the implement link on the main page</li>
     </ol>
 
     {/* Demo Video Section */}
-    <h2 style={styles.heading2}>Demo Video</h2>
+    <h2 style={styles.heading2}>3. Demo Video</h2>
     <div style={styles.videoContainer}>
       <iframe
         style={{
