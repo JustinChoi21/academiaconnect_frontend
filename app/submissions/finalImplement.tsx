@@ -15,15 +15,18 @@ const FinalImplement = () => (
     {/* Instructions Section */}
     <h2 style={styles.heading2}>2. Running Instructions</h2>
     <ol style={styles.list}>
-      <li>1) Clone the repository: <code>git clone https://github.com/JustinChoi21/academiaconnect_frontend.git</code></li>
-      <li>2) Install dependencies: <code>npm install</code></li>
-      <li>3) Start the development server: <code>npm run dev</code></li>
-      <li>4) Open your browser and navigate to: <code>http://localhost:3000</code></li>
-      <li>5) Click the implement link on the main page</li>
+      <li>The source code and installation instructions for this project can be found at: <code>https://github.com/JustinChoi21/academiaconnect_frontend.git</code></li>
+      <li>To test the implemented features, visit <code>https://academiaconnect.net/login</code></li>
+      <li>Use the following credentials to log in:</li>
+      <li>Email: <code>test@gmail.com</code></li>
+      <li>Password: <code>test123</code></li>
     </ol>
 
     {/* Demo Video Section */}
     <h2 style={styles.heading2}>3. Demo Video</h2>
+    <p></p>
+    <p>This video shows the implementation of the project. You can enable captions to see detailed explanations of each feature being demonstrated.</p>
+    <p>If the embedded video does not appear, please visit <a href="https://www.youtube.com/watch?v=FQ9AY4Fuugg" style={styles.link}>https://www.youtube.com/watch?v=FQ9AY4Fuugg</a> to view it.</p>
     <div style={styles.videoContainer}>
       <iframe
         style={{
