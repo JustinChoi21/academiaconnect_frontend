@@ -15,18 +15,18 @@ const FinalImplement = () => (
     {/* Instructions Section */}
     <h2 style={styles.heading2}>2. Running Instructions</h2>
     <ol style={styles.list}>
-      <li>The source code and installation instructions for this project can be found at: <code>https://github.com/JustinChoi21/academiaconnect_frontend.git</code></li>
-      <li>To test the implemented features, visit <code>https://academiaconnect.net/login</code></li>
-      <li>Use the following credentials to log in:</li>
+      <li>- The source code and installation instructions for this project can be found at: <a href="https://github.com/JustinChoi21/academiaconnect_frontend.git" style={styles.link}><code>https://github.com/JustinChoi21/academiaconnect_frontend.git</code></a></li>
+      <li>- To test the implemented features, visit <a href="https://academiaconnect.net/login" style={styles.link}><code>https://academiaconnect.net/login</code></a></li>
+      <li>- Use the following credentials to log in:</li>
       <li>Email: <code>test@gmail.com</code></li>
       <li>Password: <code>test123</code></li>
     </ol>
 
     {/* Demo Video Section */}
     <h2 style={styles.heading2}>3. Demo Video</h2>
-    <p></p>
-    <p>This video shows the implementation of the project. You can enable captions to see detailed explanations of each feature being demonstrated.</p>
-    <p>If the embedded video does not appear, please visit <a href="https://www.youtube.com/watch?v=FQ9AY4Fuugg" style={styles.link}>https://www.youtube.com/watch?v=FQ9AY4Fuugg</a> to view it.</p>
+    <p>- This video shows the implementation of the project.</p>
+    <p>- You can enable captions to see detailed explanations of each feature being demonstrated.</p>
+    <p>- If the embedded video does not appear, please visit <a href="https://www.youtube.com/watch?v=FQ9AY4Fuugg" style={styles.link}>https://www.youtube.com/watch?v=FQ9AY4Fuugg</a> to view it.</p>
     <div style={styles.videoContainer}>
       <iframe
         style={{
