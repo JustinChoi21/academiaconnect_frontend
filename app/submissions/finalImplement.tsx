@@ -7,7 +7,12 @@ const FinalImplement = () => (
     {/* Implementation Links Section */}
     <h2 style={styles.heading2}>1. Implementation Links</h2>
     <div style={styles.linkContainer}>
-      <a href="https://github.com/JustinChoi21/academiaconnect_frontend.git" style={styles.link}>
+      <a 
+        href="https://github.com/JustinChoi21/academiaconnect_frontend.git" 
+        style={styles.link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         View Source Code on GitHub
       </a>
     </div>
@@ -15,7 +20,12 @@ const FinalImplement = () => (
     {/* Instructions Section */}
     <h2 style={styles.heading2}>2. Running Instructions</h2>
     <ol style={styles.list}>
-      <li>- The source code and installation instructions for this project can be found at: <a href="https://github.com/JustinChoi21/academiaconnect_frontend.git" style={styles.link}><code>https://github.com/JustinChoi21/academiaconnect_frontend.git</code></a></li>
+      <li>- The source code and installation instructions for this project can be found at: <a 
+          href="https://github.com/JustinChoi21/academiaconnect_frontend.git" 
+          style={styles.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        ><code>https://github.com/JustinChoi21/academiaconnect_frontend.git</code></a></li>
       <li>- To test the implemented features, visit <a href="https://academiaconnect.net/login" style={styles.link}><code>https://academiaconnect.net/login</code></a></li>
       <li>- Use the following credentials to log in:</li>
       <li>Email: <code>test@gmail.com</code></li>
