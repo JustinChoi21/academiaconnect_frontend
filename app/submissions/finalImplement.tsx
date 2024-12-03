@@ -28,8 +28,8 @@ const FinalImplement = () => (
         ><code>https://github.com/JustinChoi21/academiaconnect_frontend.git</code></a></li>
       <li>- To test the implemented features, visit <a href="https://academiaconnect.net/login" style={styles.link}><code>https://academiaconnect.net/login</code></a></li>
       <li>- Use the following credentials to log in:</li>
-      <li>Email: <code>test@gmail.com</code></li>
-      <li>Password: <code>test123</code></li>
+      <li>- Email: <code>test@gmail.com</code></li>
+      <li>- Password: <code>test123</code></li>
     </ol>
 
     {/* Demo Video Section */}
@@ -37,6 +37,7 @@ const FinalImplement = () => (
     <p>- This video shows the implementation of the project.</p>
     <p>- You can enable captions to see detailed explanations of each feature being demonstrated.</p>
     <p>- If the embedded video does not appear, please visit <a href="https://www.youtube.com/watch?v=FQ9AY4Fuugg" style={styles.link}>https://www.youtube.com/watch?v=FQ9AY4Fuugg</a> to view it.</p>
+    <br />
     <div style={styles.videoContainer}>
       <iframe
         style={{
