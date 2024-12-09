@@ -53,7 +53,7 @@ export default function SignUpPage() {
 
           if (signInError) throw signInError;
 
-          toast.success('회원가입이 완료되었습니다!');
+          toast.success('Sign up completed successfully!');
           router.push('/home');
         } catch (error) {
           console.error('Error during profile creation or sign in:', error);
