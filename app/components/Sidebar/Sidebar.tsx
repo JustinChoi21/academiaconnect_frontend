@@ -10,11 +10,6 @@ export default function Sidebar() {
   const router = useRouter();
 
   const menuItems = [
-    { 
-      icon: '🏠',
-      label: 'Home',
-      path: '/home',
-    },
     {
       icon: '🔍',
       label: 'Search',
@@ -57,6 +52,11 @@ export default function Sidebar() {
 
   return (
     <div className={styles.sidebar}>
+      <div className={styles.logo}>
+        <Link href="/home" className="text-lg font-bold text-[#5e5e5e] hover:text-gray-300">
+          AcademiaConnect
+        </Link>
+      </div>
       <div className={styles.menuItems}>
         {menuItems.map((item, index) => (
           <Link 
